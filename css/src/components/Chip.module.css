@@ -1,0 +1,61 @@
+.Chip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--spacing-l);
+  padding: var(--spacing-s) var(--spacing);
+  background: var(--secondary-light);
+  cursor: pointer;
+}
+
+.Chip:hover {
+  background: var(--secondary);
+}
+
+.Chip:active {
+  background: var(--secondary-dark);
+}
+
+.Chip:focus, .Chip:focus-visible {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: none;
+}
+
+.Chip-Icon {
+  width: var(--spacing-2);
+  height: var(--spacing-2);
+  font-size: var(--spacing-2);
+  margin-right: var(--spacing-m);
+  background: linear-gradient(to bottom, #ffc208 0%, #e31c79 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Chip-Text {
+  color: var(--inverse);
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+  font-family: var(--font-family);
+}
+
+/* Disabled Chip */
+
+.Chip--disabled {
+  background: var(--secondary-lighter);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.Chip-Icon--disabled {
+  background: linear-gradient(to bottom, #ffe79e 0%, #f4a4c9 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Chip-Text--disabled {
+  color: var(--inverse-lightest);
+}

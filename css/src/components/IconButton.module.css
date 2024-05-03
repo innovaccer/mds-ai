@@ -1,0 +1,58 @@
+.IconButton {
+  background: transparent;
+  padding: var(--spacing);
+  border-radius: var(--spacing-m);
+  cursor: pointer;
+  border: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--font-height-s);
+  position: relative;
+}
+
+.IconButton:hover {
+  background: var(--secondary);
+}
+
+.IconButton:active {
+  background: var(--secondary-dark);
+}
+
+.IconButton:focus {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.IconButton:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.IconButton--round {
+  border-radius: 50%;
+}
+
+.IconButton-Icon {
+  overflow: hidden;
+  flex-shrink: 0;
+  user-select: none;
+  line-height: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.IconButton-AI-Icon {
+  position: absolute;
+}
+
+.IconButton-AI-Icon--top {
+  bottom: 45%;
+  left: 45%;
+}
+
+.IconButton-AI-Icon--bottom {
+  top: 50%;
+  left: 50%;
+  transform: rotate(180deg);
+}

@@ -1,0 +1,69 @@
+.Button {
+  padding: var(--spacing) var(--spacing-l);
+  border-radius: var(--spacing-m);
+  cursor: pointer;
+  border: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--font-height-s);
+  display: flex;
+  align-items: center;
+}
+
+.Button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary Button */
+
+.Button--primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.Button--primary:hover {
+  background: var(--primary-dark);
+}
+
+.Button--primary:active {
+  background: var(--primary-darker);
+}
+
+.Button--primary:disabled {
+  background: var(--primary-lighter);
+}
+
+.Button--primary:focus {
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+/* Basic Button */
+
+.Button--basic {
+  background: var(--secondary-light);
+  color: var(--inverse);
+}
+
+.Button--basic:hover {
+  background: var(--secondary);
+}
+
+.Button--basic:active {
+  background: var(--secondary-dark);
+}
+
+.Button--basic:disabled {
+  background: var(--secondary-lighter);
+}
+
+.Button--basic:focus {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+/* Button Icon */
+
+.Button-Icon {
+  margin-right: var(--spacing);
+}

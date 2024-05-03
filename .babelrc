@@ -1,0 +1,7 @@
+{
+  "presets": [
+    "@babel/preset-env", // Transpile modern JavaScript features to target environments
+    "@babel/preset-react" // Transpile JSX syntax
+  ],
+  "plugins": ["@babel/plugin-transform-strict-mode"]
+}
