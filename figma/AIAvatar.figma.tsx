@@ -1,6 +1,6 @@
 import React from "react";
 // import { AIAvatar } from "./AIAvatar"
-import { Button } from "../core/components/atoms/button/Button";
+import { Button } from "@/index";
 import figma from "@figma/code-connect";
 
 /**

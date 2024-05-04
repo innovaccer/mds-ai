@@ -1,7 +1,10 @@
 import * as React from "react";
 import { Size4Hierarchy } from "@/common.type";
-import AIIcon from './AIIcon.svg';
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+// import AIIcon from './AIIcon.svg';
+import {
+  Player,
+  // Controls
+} from "@lottiefiles/react-lottie-player";
 import LottieFile from "./assets/AIProcessing.json";
 
 export interface IconProps {
@@ -36,14 +39,14 @@ export interface IconProps {
 }
 
 export const Icon = (props: IconProps) => {
-  const {width, height, size, alt, ...rest} = props;
+  const { width, height, size, alt, ...rest } = props;
 
   const sizeMapping = {
-    'tiny': 16,
-    'regular': 24,
-    'medium': 32,
-    'large': 48,
-  }
+    tiny: 16,
+    regular: 24,
+    medium: 32,
+    large: 48,
+  };
 
   const iconWidth = (size && sizeMapping[size]) || width;
   const iconHeight = (size && sizeMapping[size]) || height;
@@ -63,11 +66,11 @@ export const Icon = (props: IconProps) => {
       </Player>
     </div>
   );
-}
+};
 
 Icon.defaultProps = {
   width: 32,
   height: 32,
-}
+};
 
 export default Icon;

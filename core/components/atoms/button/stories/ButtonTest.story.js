@@ -1,11 +1,12 @@
 // import type { Meta, StoryObj } from "@storybook/react";
 // import { fn } from "@storybook/test";
-import { Button } from "../Button";
+import { Button } from "@/index";
 import figma from "@figma/code-connect";
 
 const meta = {
-  title: "Button",
+  title: "Test/Button",
   component: Button,
+  // args: { onClick: fn() },
   parameters: {
     layout: "centered",
     design: {
@@ -22,6 +23,20 @@ const meta = {
       },
     },
   },
+  argTypes: {
+    // appearance: {
+    //   control: { type: "select", options: ["primary", "secondary"] },
+    // },
+    // margin: { control: "number", if: { arg: "advanced" } },
+  },
+  // argTypes: {
+  //   label: { control: "text" }, // Always shows the control
+  //   advanced: { control: "boolean" },
+  //   // Only enabled if advanced is true
+  //   margin: { control: "number", if: { arg: "advanced" } },
+  //   padding: { control: "number", if: { arg: "advanced" } },
+  //   cornerRadius: { control: "number", if: { arg: "advanced" } },
+  // },
   tags: ["autodocs"],
 };
 

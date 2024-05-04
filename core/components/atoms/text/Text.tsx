@@ -1,7 +1,7 @@
 import * as React from "react";
 import classNames from "classnames";
 import styles from "../../../../css/src/components/Text.module.css";
-import { Size2Hierarchy } from "../../../common.type";
+import { Size2Hierarchy } from "@/common.type";
 
 export interface TextProps {
   /**

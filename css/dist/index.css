@@ -489,13 +489,21 @@
   flex-direction: row;
 }
 
-.ProgressIndicator--horizontal {
+.ProgressIndicator--vertical {
   flex-direction: column;
+}
+
+.ProgressIndicator-Text--horizontal {
+  margin-left: var(--spacing-m);
+}
+
+.ProgressIndicator-Text--vertical {
+  margin-top: var(--spacing);
 }
 
 .Text {
   font-weight: var(--font-weight-normal);
-  background: linear-gradient(90deg, #595959, #C5C5C5, #C5C5C5, #595959);
+  background: linear-gradient(180deg, #595959, #C5C5C5, #C5C5C5, #595959);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: var(--font-family);;

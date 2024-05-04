@@ -6,9 +6,7 @@ import {
   ButtonType,
   IconShape,
   Size2Hierarchy,
-} from "../../../common.type";
-
-// import Icon from "../Icon/Icon";
+} from "@/common.type";
 import AIIcon from './icons/SaraIcon.svg';
 
 export interface IconButtonProps {

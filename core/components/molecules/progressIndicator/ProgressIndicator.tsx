@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Alignment, Size2Hierarchy } from "../../../common.type";
+import { Alignment, Size2Hierarchy } from "@/common.type";
 import { Text } from "../../atoms/text";
-import { Icon } from "../../../index";
+import { Icon } from "@/index";
 import classNames from "classnames";
 import styles from "../../../../css/src/components/ProgressIndicator.module.css";
 
