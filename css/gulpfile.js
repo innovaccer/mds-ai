@@ -12,7 +12,6 @@ const materialFont = "./material-design-icons/iconfont/*.{ttf,otf,woff2}";
 const sources = [
   "./src/tokens/*.css",
   "./src/variables/*.css",
-  "./src/components/*.css",
   materialIcons,
 ];
 

@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "../../../../css/src/components/Chip.module.css";
+import styles from "./Chip.module.css";
 import classNames from "classnames";
 
 export interface ChipProps {

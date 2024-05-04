@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "../../../../css/src/components/IconButton.module.css";
+import styles from "./IconButton.module.css";
 import classNames from "classnames";
 import {
   IconPosition,

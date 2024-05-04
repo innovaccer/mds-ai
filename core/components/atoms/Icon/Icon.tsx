@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Size4Hierarchy } from "@/common.type";
-// import AIIcon from './AIIcon.svg';
+// import AIIcon from './assets/AIIcon.svg';
 import {
   Player,
   // Controls

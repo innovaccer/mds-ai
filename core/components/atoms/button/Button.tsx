@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "../../../../css/src/components/Button.module.css";
+import styles from "./Button.module.css";
 import classNames from "classnames";
 import { ButtonAppearance, ButtonType } from "@/common.type";
 import BasicIcon from './icons/Basic.svg';
