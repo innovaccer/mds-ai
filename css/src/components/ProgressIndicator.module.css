@@ -1,0 +1,21 @@
+.ProgressIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProgressIndicator--horizontal {
+  flex-direction: row;
+}
+
+.ProgressIndicator--vertical {
+  flex-direction: column;
+}
+
+.ProgressIndicator-Text--horizontal {
+  margin-left: var(--spacing-m);
+}
+
+.ProgressIndicator-Text--vertical {
+  margin-top: var(--spacing);
+}

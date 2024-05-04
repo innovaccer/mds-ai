@@ -54,8 +54,8 @@ export const Icon = (props: IconProps) => {
       <Player
         autoplay
         loop
-        // src={LottieFile}
-        src="https://lottie.host/d09be553-4246-442d-9961-9bd3257fe1ac/Djt2Pam0Tw.json"
+        src={LottieFile}
+        // src="https://lottie.host/d09be553-4246-442d-9961-9bd3257fe1ac/Djt2Pam0Tw.json"
         style={{ height: iconHeight, width: iconWidth }}
         {...rest}
       >

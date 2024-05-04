@@ -51,7 +51,7 @@ export interface IconButtonProps {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
   /**
-   * Handler to be called when mouse pointer leaves `Button`.
+   * Handler to be called when mouse pointer leaves `IconButton`.
    */
   onMouseLeave?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -61,7 +61,7 @@ export interface IconButtonProps {
    */
   "data-test"?: string;
   /**
-   * Adds className to `Button`
+   * Adds className to `IconButton`
    */
   className?: string;
 }
