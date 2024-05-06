@@ -15,7 +15,7 @@ function globals() {
 }
 
 const config = {
-  input: "./core/index.tsx",
+  input: "./src/index.tsx",
   output: [
     {
       file: "dist/bundle.cjs.js",
@@ -45,8 +45,7 @@ const config = {
     json(),
     alias({
       entries: [
-        { find: "@", replacement: path.resolve("./core") }, // Example alias for src directory
-        // Add more aliases as needed
+        { find: "@", replacement: path.resolve("./src") },
       ],
     }),
   ],

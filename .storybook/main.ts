@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 import path from "path";
 
 const config: StorybookConfig = {
-  stories: ["../core/components/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-onboarding",
@@ -21,7 +21,7 @@ const config: StorybookConfig = {
   staticDirs: ["./public"],
   webpackFinal: async (config, { configType }) => {
     if (config.resolve?.alias) {
-      config.resolve.alias["@"] = path.resolve(__dirname, "../core");
+      config.resolve.alias["@"] = path.resolve(__dirname, "../src");
     }
     // Return the altered config
     return config;
