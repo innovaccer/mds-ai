@@ -1,6 +1,8 @@
 import * as React from "react";
-import AILogo from "./AIAvatar.svg";
-import { Size3Hierarchy } from "@/common.type";
+import { Size3Hierarchy, AvatarStates } from "@/common.type";
+import { Player } from "@lottiefiles/react-lottie-player";
+import AIResting from "./assets/AI-Resting.json";
+import AILogo from "./assets/AI-Avatar.svg";
 
 export interface AvatarProps {
   /**
@@ -20,6 +22,10 @@ export interface AvatarProps {
    */
   size?: Size3Hierarchy;
   /**
+   * Defines state of `Avatar`
+   */
+  state?: AvatarStates;
+  /**
    * Handler to be called when `Avatar` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
@@ -34,7 +40,7 @@ export interface AvatarProps {
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const { width, height, alt, size, ...rest } = props;
+  const { width, height, alt, size, state, ...rest } = props;
 
   const sizeMapping = {
     regular: 32,
@@ -45,21 +51,35 @@ export const Avatar = (props: AvatarProps) => {
   const avatarWidth = (size && sizeMapping[size]) || width;
   const avatarHeight = (size && sizeMapping[size]) || height;
 
+  if (state === "default") {
+    return (
+      <img
+        src={AILogo}
+        alt={alt}
+        width={avatarWidth}
+        height={avatarHeight}
+        data-test="DesignSystem-AI-Avatar"
+        {...rest}
+      />
+    );
+  }
+
   return (
-    <img
-      src={AILogo}
-      alt={alt}
-      width={avatarWidth}
-      height={avatarHeight}
-      data-test="DesignSystem-AI-Avatar"
-      {...rest}
-    />
+    <div {...rest}>
+      <Player
+        autoplay
+        loop
+        src={AIResting}
+        style={{ height: avatarHeight, width: avatarWidth }}
+      />
+    </div>
   );
 };
 
 Avatar.defaultProps = {
   width: 32,
   height: 32,
+  state: "default" as AvatarStates,
 };
 
 export default Avatar;
