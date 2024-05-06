@@ -1,11 +1,10 @@
 import * as React from "react";
-import { Size4Hierarchy } from "@/common.type";
-// import AIIcon from './assets/AIIcon.svg';
-import {
-  Player,
-  // Controls
-} from "@lottiefiles/react-lottie-player";
-import LottieFile from "./assets/AIProcessing.json";
+import { Size4Hierarchy, IconStates } from "@/common.type";
+import { Player } from "@lottiefiles/react-lottie-player";
+import AIIcon from "./assets/AI-Icon.svg";
+import Listening from "./assets/AI-Listening.json";
+import AIProcessingLong from "./assets/AI-Processing-Long.json";
+import AIProcessingShort from "./assets/AI-Processing.json";
 
 export interface IconProps {
   /**
@@ -25,9 +24,13 @@ export interface IconProps {
    */
   alt: string;
   /**
-   * Handler to be called when `Avatar` is clicked
+   * Handler to be called when `Icon` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  /**
+   * Defines state for the `Icon`
+   */
+  state?: IconStates;
   /**
    * Adds custom class
    */
@@ -39,7 +42,7 @@ export interface IconProps {
 }
 
 export const Icon = (props: IconProps) => {
-  const { width, height, size, alt, ...rest } = props;
+  const { width, height, size, alt, state, ...rest } = props;
 
   const sizeMapping = {
     tiny: 16,
@@ -51,19 +54,34 @@ export const Icon = (props: IconProps) => {
   const iconWidth = (size && sizeMapping[size]) || width;
   const iconHeight = (size && sizeMapping[size]) || height;
 
+  if (state === "default") {
+    return (
+      <img
+        src={AIIcon}
+        alt={alt}
+        width={iconWidth}
+        height={iconHeight}
+        data-test="DesignSystem-AI-Icon"
+        {...rest}
+      />
+    );
+  }
+
+  const stateMapping = {
+    listening: Listening,
+    "short-processing": AIProcessingShort,
+    "long-processing": AIProcessingLong,
+  };
+
   return (
-    // <img src={AIIcon} alt={alt} width={iconWidth} height={iconHeight} data-test="DesignSystem-AI-Icon" {...rest} />
     <div {...rest}>
       <Player
         autoplay
         loop
-        src={LottieFile}
-        // src="https://lottie.host/d09be553-4246-442d-9961-9bd3257fe1ac/Djt2Pam0Tw.json"
-        style={{ height: iconHeight, width: iconWidth }}
-        {...rest}
-      >
-        {/* <Controls visible={true} buttons={["play", "repeat", "frame", "debug"]} /> */}
-      </Player>
+        src={state && stateMapping[state]}
+        // style={{ height: iconHeight, width: iconWidth }}
+        style={{ height: iconHeight, width: 'auto' }}
+      />
     </div>
   );
 };
@@ -71,6 +89,7 @@ export const Icon = (props: IconProps) => {
 Icon.defaultProps = {
   width: 32,
   height: 32,
+  state: "default" as IconStates,
 };
 
 export default Icon;

@@ -13,3 +13,7 @@ export type Size4Hierarchy = "tiny" | "regular" | "medium" | "large";
 
 /* Layout Types */
 export type Alignment = "horizontal" | "vertical";
+
+/* Animation States */
+export type IconStates = "default" | "listening" | "short-processing" | "long-processing";
+export type AvatarStates = "default" | "resting";
