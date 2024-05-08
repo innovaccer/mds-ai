@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "AI components library project for Innovaccer Design System",
   "main": "dist/bundle.umd.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/src/common.type.d.ts",
   "directories": {
     "css": "css"
   },

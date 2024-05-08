@@ -1,0 +1,10 @@
+export type ButtonAppearance = "primary" | "basic";
+export type ButtonType = "button" | "submit" | "reset";
+export type IconPosition = "top" | "bottom";
+export type IconShape = "round" | "square";
+export type Size2Hierarchy = "regular" | "large";
+export type Size3Hierarchy = "regular" | "medium" | "large";
+export type Size4Hierarchy = "tiny" | "regular" | "medium" | "large";
+export type Alignment = "horizontal" | "vertical";
+export type IconStates = "default" | "listening" | "short-processing" | "long-processing";
+export type AvatarStates = "default" | "resting";

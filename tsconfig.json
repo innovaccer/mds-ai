@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "sourceMap": true,
     "strict": true,
     "target": "es5",
@@ -22,5 +23,5 @@
       "@/*": ["src/*"]
     }
   },
-  "exclude": ["dist", "build", "node_modules", ".github"]
+  "exclude": ["dist", "build", "node_modules", ".github", "figma", "jest.config.ts"]
 }
