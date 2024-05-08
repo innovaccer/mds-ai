@@ -2,7 +2,10 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 import path from "path";
 
 const config: StorybookConfig = {
-  stories: ["../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../src/components/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/components/**/*.mdx",
+  ],
   addons: [
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-onboarding",
