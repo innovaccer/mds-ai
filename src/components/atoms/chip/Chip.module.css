@@ -6,6 +6,7 @@
   padding: var(--spacing-s) var(--spacing);
   background: var(--secondary-light);
   cursor: pointer;
+  width: fit-content;
 }
 
 .Chip:hover {
@@ -16,7 +17,8 @@
   background: var(--secondary-dark);
 }
 
-.Chip:focus, .Chip:focus-visible {
+.Chip:focus,
+.Chip:focus-visible {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
   outline: none;
 }
@@ -24,7 +26,7 @@
 .Chip-Icon {
   width: var(--spacing-2);
   height: var(--spacing-2);
-  font-size: var(--spacing-2);
+  font-size: var(--spacing-2) !important;
   margin-right: var(--spacing-m);
   background: linear-gradient(to bottom, #ffc208 0%, #e31c79 100%);
   -webkit-background-clip: text;
