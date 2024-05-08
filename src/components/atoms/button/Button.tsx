@@ -70,7 +70,7 @@ export const Button = (props: ButtonProps) => {
 
   const IconClassNames = classNames({
     [styles["Button-Icon"]]: true,
-  })
+  });
 
   const buttonIcon = appearance === "primary" ? PrimaryIcon : BasicIcon;
 

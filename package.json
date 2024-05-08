@@ -7,7 +7,7 @@
     "css": "css"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "dev": "concurrently --kill-others --raw \"npm run watch-css\" \"npm run start\"",
@@ -47,6 +47,9 @@
     "@storybook/react": "^8.0.9",
     "@storybook/react-webpack5": "^8.0.9",
     "@storybook/test": "^8.0.9",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.6",
+    "@types/jest": "^29.5.12",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
@@ -56,12 +59,17 @@
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^10.0.0",
     "gulp-sourcemaps": "^3.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.4.38",
     "postcss-color-mod-function": "^3.0.3",
     "rollup": "^4.17.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "storybook": "^8.0.9",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
 }
