@@ -23,15 +23,26 @@ export interface ChipProps {
    * Handler to be called when Chip is clicked
    */
   onClick?: (name: string | undefined) => void;
+  /**
+   * Stores custom testing data private to the component.
+   */
+  "data-test"?: string;
+  /**
+   * Adds className to `Button`
+   */
+  className?: string;
 }
 
 export const Chip = (props: ChipProps) => {
-  const { label, icon, disabled, name, onClick, ...rest } = props;
+  const { label, icon, disabled, name, className, onClick, ...rest } = props;
 
-  const ChipClassNames = classNames({
-    [styles.Chip]: true,
-    [styles["Chip--disabled"]]: disabled,
-  });
+  const ChipClassNames = classNames(
+    {
+      [styles.Chip]: true,
+      [styles["Chip--disabled"]]: disabled,
+    },
+    className
+  );
 
   const IconClassNames = classNames({
     [styles["Chip-Icon"]]: true,
@@ -46,15 +57,20 @@ export const Chip = (props: ChipProps) => {
   });
 
   const onClickHandler = () => {
+    if (disabled) {
+      return;
+    }
     onClick?.(name);
-  }
+  };
 
   return (
-    <div data-test="DesignSystem-AI-Chip" className={ChipClassNames} onClick={onClickHandler} {...rest}>
-      <i
-        data-test="DesignSystem-AI-Chip-Icon"
-        className={IconClassNames}
-      >
+    <div
+      data-test="DesignSystem-AI-Chip"
+      className={ChipClassNames}
+      onClick={onClickHandler}
+      {...rest}
+    >
+      <i data-test="DesignSystem-AI-Chip-Icon" className={IconClassNames}>
         {icon}
       </i>
 

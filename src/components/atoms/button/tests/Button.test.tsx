@@ -53,6 +53,13 @@ describe("Button", () => {
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 
+  it("does not calls the onClick function when disabled", () => {
+    const { getByTestId } = render(<Button {...defaultProps} disabled />);
+    const button = getByTestId("DesignSystem-AI-Button");
+    fireEvent.click(button);
+    expect(mockOnClick).not.toHaveBeenCalled();
+  });
+
   it("renders the button with an icon", () => {
     const { getByTestId } = render(
       <Button {...defaultProps} appearance="primary" />
