@@ -23,7 +23,8 @@
     "lint:check": "eslint ./src --ext .tsx,.ts,.js,.jsx",
     "lint": "npm run lint:check -- --fix",
     "prettier:check": "prettier --config ./.prettierrc --check",
-    "prettier": "prettier --config ./.prettierrc --write 'src/components/**/*.css'"
+    "prettier": "prettier --config ./.prettierrc --write 'src/components/**/*.css'",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "Innovaccer",
