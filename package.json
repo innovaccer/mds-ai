@@ -17,8 +17,9 @@
     "build-js": "rollup -c",
     "build": "npm run build-js",
     "start": "storybook dev -p 6006",
-    "predeploy": "npm run build-storybook",
+    "pre-deploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
+    "pre-commit": "lint-staged",
     "lint:check": "eslint ./src --ext .tsx,.ts,.js,.jsx",
     "lint": "npm run lint:check -- --fix",
     "prettier": "prettier --config ./.prettierrc --write 'src/components/**/*.css'"
@@ -70,6 +71,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.2",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "rollup": "^4.17.2",
@@ -80,5 +82,13 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "typescript-eslint-parser": "^22.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{tx,tsx,js,jsx}": [
+      "npm run lint:check"
+    ],
+    "src/components/**/*.css": [
+      "npm run prettier:check"
+    ]
   }
 }
