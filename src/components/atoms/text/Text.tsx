@@ -1,7 +1,7 @@
-import * as React from "react";
-import classNames from "classnames";
-import styles from "./Text.module.css";
-import { Size2Hierarchy } from "@/common.type";
+import * as React from 'react';
+import classNames from 'classnames';
+import styles from './Text.module.css';
+import { Size2Hierarchy } from '@/common.type';
 
 export interface TextProps {
   /**
@@ -15,7 +15,7 @@ export interface TextProps {
   /**
    * Stores custom testing data private to the component
    */
-  "data-test"?: string;
+  'data-test'?: string;
   /**
    * Adds className to `Text`
    */
@@ -28,15 +28,17 @@ export const Text = (props: TextProps) => {
   const TextClassNames = classNames(
     {
       [styles.Text]: true,
-      [styles["Text--regular"]]: size === "regular",
-      [styles["Text--large"]]: size === "large",
+      [styles['Text--regular']]: size === 'regular',
+      [styles['Text--large']]: size === 'large',
     },
     className
   );
 
   return (
-    <span data-test="DesignSystem-AI-Text" className={TextClassNames} {...rest}>{children}</span>
-  )
-}
+    <span data-test="DesignSystem-AI-Text" className={TextClassNames} {...rest}>
+      {children}
+    </span>
+  );
+};
 
 export default Text;

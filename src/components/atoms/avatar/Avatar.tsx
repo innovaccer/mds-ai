@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Size3Hierarchy, AvatarStates } from "@/common.type";
-import { Player } from "@lottiefiles/react-lottie-player";
-import AIResting from "./assets/AI-Resting.json";
-import AILogo from "./assets/AI-Avatar.svg";
+import * as React from 'react';
+import { Size3Hierarchy, AvatarStates } from '@/common.type';
+import { Player } from '@lottiefiles/react-lottie-player';
+import AIResting from './assets/AI-Resting.json';
+import AILogo from './assets/AI-Avatar.svg';
 
 export interface AvatarProps {
   /**
@@ -36,7 +36,7 @@ export interface AvatarProps {
   /**
    * Stores custom testing data private to the component
    */
-  "data-test"?: string;
+  'data-test'?: string;
 }
 
 export const Avatar = (props: AvatarProps) => {
@@ -51,7 +51,7 @@ export const Avatar = (props: AvatarProps) => {
   const avatarWidth = (size && sizeMapping[size]) || width;
   const avatarHeight = (size && sizeMapping[size]) || height;
 
-  if (state === "default") {
+  if (state === 'default') {
     return (
       <img
         src={AILogo}
@@ -66,12 +66,7 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <div {...rest}>
-      <Player
-        autoplay
-        loop
-        src={AIResting}
-        style={{ height: avatarHeight, width: avatarWidth }}
-      />
+      <Player autoplay loop src={AIResting} style={{ height: avatarHeight, width: avatarWidth }} />
     </div>
   );
 };
@@ -79,7 +74,7 @@ export const Avatar = (props: AvatarProps) => {
 Avatar.defaultProps = {
   width: 32,
   height: 32,
-  state: "default" as AvatarStates,
+  state: 'default' as AvatarStates,
 };
 
 export default Avatar;

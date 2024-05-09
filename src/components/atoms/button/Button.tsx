@@ -1,9 +1,9 @@
-import * as React from "react";
-import styles from "./Button.module.css";
-import classNames from "classnames";
-import { ButtonAppearance, ButtonType } from "@/common.type";
+import * as React from 'react';
+import styles from './Button.module.css';
+import classNames from 'classnames';
+import { ButtonAppearance, ButtonType } from '@/common.type';
 import BasicIcon from './icons/Basic.svg';
-import PrimaryIcon from "./icons/Primary.svg";
+import PrimaryIcon from './icons/Primary.svg';
 
 export interface ButtonProps {
   /**
@@ -37,19 +37,15 @@ export interface ButtonProps {
   /**
    * Handler to be called when mouse pointer enters `Button`.
    */
-  onMouseEnter?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /**
    * Handler to be called when mouse pointer leaves `Button`.
    */
-  onMouseLeave?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /**
    * Stores custom testing data private to the component.
    */
-  "data-test"?: string;
+  'data-test'?: string;
   /**
    * Adds className to `Button`
    */
@@ -62,24 +58,20 @@ export const Button = (props: ButtonProps) => {
   const buttonClassNames = classNames(
     {
       [styles.Button]: true,
-      [styles["Button--primary"]]: appearance === "primary",
-      [styles["Button--basic"]]: appearance === "basic",
+      [styles['Button--primary']]: appearance === 'primary',
+      [styles['Button--basic']]: appearance === 'basic',
     },
     className
   );
 
   const IconClassNames = classNames({
-    [styles["Button-Icon"]]: true,
+    [styles['Button-Icon']]: true,
   });
 
-  const buttonIcon = appearance === "primary" ? PrimaryIcon : BasicIcon;
+  const buttonIcon = appearance === 'primary' ? PrimaryIcon : BasicIcon;
 
   return (
-    <button
-      className={buttonClassNames}
-      data-test="DesignSystem-AI-Button"
-      {...rest}
-    >
+    <button className={buttonClassNames} data-test="DesignSystem-AI-Button" {...rest}>
       <img
         src={buttonIcon}
         alt="Button Icon"
@@ -94,7 +86,7 @@ export const Button = (props: ButtonProps) => {
 };
 
 Button.defaultProps = {
-  appearance: 'basic' as ButtonAppearance
-}
+  appearance: 'basic' as ButtonAppearance,
+};
 
 export default Button;

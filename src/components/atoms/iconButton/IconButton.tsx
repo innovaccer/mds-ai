@@ -1,12 +1,7 @@
-import * as React from "react";
-import styles from "./IconButton.module.css";
-import classNames from "classnames";
-import {
-  IconPosition,
-  ButtonType,
-  IconShape,
-  Size2Hierarchy,
-} from "@/common.type";
+import * as React from 'react';
+import styles from './IconButton.module.css';
+import classNames from 'classnames';
+import { IconPosition, ButtonType, IconShape, Size2Hierarchy } from '@/common.type';
 import AIIcon from './icons/SaraIcon.svg';
 
 export interface IconButtonProps {
@@ -45,19 +40,15 @@ export interface IconButtonProps {
   /**
    * Handler to be called when mouse pointer enters `IconButton`.
    */
-  onMouseEnter?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /**
    * Handler to be called when mouse pointer leaves `IconButton`.
    */
-  onMouseLeave?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /**
    * Stores custom testing data private to the component.
    */
-  "data-test"?: string;
+  'data-test'?: string;
   /**
    * Adds className to `IconButton`
    */
@@ -65,32 +56,32 @@ export interface IconButtonProps {
 }
 
 export const IconButton = (props: IconButtonProps) => {
-  const { icon, position="top", shape, className, size="regular", ...rest } = props;
+  const { icon, position = 'top', shape, className, size = 'regular', ...rest } = props;
 
   const buttonClassNames = classNames(
     {
       [styles.IconButton]: true,
-      [styles["IconButton--round"]]: shape === 'round',
+      [styles['IconButton--round']]: shape === 'round',
     },
     className
   );
 
   const IconClassNames = classNames({
-    [styles["IconButton-Icon"]]: true,
-    ["ai-material-symbols"]: true,
-    ["ai-material-symbols-rounded"]: true,
+    [styles['IconButton-Icon']]: true,
+    ['ai-material-symbols']: true,
+    ['ai-material-symbols-rounded']: true,
   });
 
   const AIIconClassNames = classNames({
-    [styles["IconButton-AI-Icon"]]: true,
-    [styles["IconButton-AI-Icon--top"]]: position === "top",
-    [styles["IconButton-AI-Icon--bottom"]]: position === "bottom",
+    [styles['IconButton-AI-Icon']]: true,
+    [styles['IconButton-AI-Icon--top']]: position === 'top',
+    [styles['IconButton-AI-Icon--bottom']]: position === 'bottom',
   });
 
   const sizeMapping = {
-    'regular': 16,
-    'large': 20
-  }
+    regular: 16,
+    large: 20,
+  };
 
   const iconStyles = {
     fontSize: `${sizeMapping[size]}px`,
@@ -99,16 +90,8 @@ export const IconButton = (props: IconButtonProps) => {
   };
 
   return (
-    <button
-      className={buttonClassNames}
-      data-test="DesignSystem-AI-IconButton"
-      {...rest}
-    > 
-      <i
-        data-test="DesignSystem-Icon"
-        className={IconClassNames}
-        style={iconStyles}
-      >
+    <button className={buttonClassNames} data-test="DesignSystem-AI-IconButton" {...rest}>
+      <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles}>
         {icon}
       </i>
       {/* <Icon alt="nested icon" size="tiny" className={AIIconClassNames} /> */}

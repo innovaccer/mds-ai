@@ -1,6 +1,6 @@
-import * as React from "react";
-import styles from "./Chip.module.css";
-import classNames from "classnames";
+import * as React from 'react';
+import styles from './Chip.module.css';
+import classNames from 'classnames';
 
 export interface ChipProps {
   /**
@@ -26,7 +26,7 @@ export interface ChipProps {
   /**
    * Stores custom testing data private to the component.
    */
-  "data-test"?: string;
+  'data-test'?: string;
   /**
    * Adds className to `Button`
    */
@@ -39,21 +39,21 @@ export const Chip = (props: ChipProps) => {
   const ChipClassNames = classNames(
     {
       [styles.Chip]: true,
-      [styles["Chip--disabled"]]: disabled,
+      [styles['Chip--disabled']]: disabled,
     },
     className
   );
 
   const IconClassNames = classNames({
-    [styles["Chip-Icon"]]: true,
-    [styles["Chip-Icon--disabled"]]: disabled,
-    ["ai-material-symbols"]: true,
-    ["ai-material-symbols-rounded"]: true,
+    [styles['Chip-Icon']]: true,
+    [styles['Chip-Icon--disabled']]: disabled,
+    ['ai-material-symbols']: true,
+    ['ai-material-symbols-rounded']: true,
   });
 
   const TextClassNames = classNames({
-    [styles["Chip-Text"]]: true,
-    [styles["Chip-Text--disabled"]]: disabled,
+    [styles['Chip-Text']]: true,
+    [styles['Chip-Text--disabled']]: disabled,
   });
 
   const onClickHandler = () => {
@@ -64,6 +64,7 @@ export const Chip = (props: ChipProps) => {
   };
 
   return (
+    // eslint-disable-next-line
     <div
       data-test="DesignSystem-AI-Chip"
       className={ChipClassNames}
