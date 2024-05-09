@@ -19,7 +19,7 @@
     "start": "storybook dev -p 6006",
     "pre-deploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "pre-commit": "lint-staged",
+    "precommit": "lint-staged",
     "lint:check": "eslint ./src --ext .tsx,.ts,.js,.jsx",
     "lint": "npm run lint:check -- --fix",
     "prettier": "prettier --config ./.prettierrc --write 'src/components/**/*.css'"
