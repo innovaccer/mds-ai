@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/index';
+import { AIButton } from '@/index';
 
 const meta = {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/AI Button',
+  component: AIButton,
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof AIButton>;
 
 export default meta;
 

@@ -52,7 +52,7 @@ export interface ButtonProps {
   className?: string;
 }
 
-export const Button = (props: ButtonProps) => {
+export const AIButton = (props: ButtonProps) => {
   const { appearance, className, label, children, ...rest } = props;
 
   const buttonClassNames = classNames(
@@ -85,8 +85,8 @@ export const Button = (props: ButtonProps) => {
   );
 };
 
-Button.defaultProps = {
+AIButton.defaultProps = {
   appearance: 'basic' as ButtonAppearance,
 };
 
-export default Button;
+export default AIButton;
