@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Chip } from '@/index';
+import { AIChip } from '@/index';
 
 const meta = {
-  title: 'Components/Chip',
-  component: Chip,
+  title: 'Components/AI Chip',
+  component: AIChip,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Chip>;
+} satisfies Meta<typeof AIChip>;
 
 export default meta;
 

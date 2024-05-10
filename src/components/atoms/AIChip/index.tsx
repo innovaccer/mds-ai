@@ -33,7 +33,7 @@ export interface ChipProps {
   className?: string;
 }
 
-export const Chip = (props: ChipProps) => {
+export const AIChip = (props: ChipProps) => {
   const { label, icon, disabled, name, className, onClick, ...rest } = props;
 
   const ChipClassNames = classNames(
@@ -65,12 +65,7 @@ export const Chip = (props: ChipProps) => {
 
   return (
     // eslint-disable-next-line
-    <div
-      data-test="DesignSystem-AI-Chip"
-      className={ChipClassNames}
-      onClick={onClickHandler}
-      {...rest}
-    >
+    <div data-test="DesignSystem-AI-Chip" className={ChipClassNames} onClick={onClickHandler} {...rest}>
       <i data-test="DesignSystem-AI-Chip-Icon" className={IconClassNames}>
         {icon}
       </i>
@@ -82,4 +77,4 @@ export const Chip = (props: ChipProps) => {
   );
 };
 
-export default Chip;
+export default AIChip;
