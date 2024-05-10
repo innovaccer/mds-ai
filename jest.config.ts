@@ -16,6 +16,7 @@ const config: Config = {
   setupFilesAfterEnv: ["./setupTests.ts"],
   testEnvironment: "jsdom",
   testRegex: "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  testPathIgnorePatterns: ["/dist"],
   verbose: true,
 };
 
