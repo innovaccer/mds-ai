@@ -45,9 +45,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Git
-      run: |
-        git config --global user.email "actions@example.com"
-        git config --global user.name "GitHub Actions"
+        run: |
+          git config --global user.email "actions@example.com"
+          git config --global user.name "GitHub Actions"
 
       - name: Install Dependencies
         run: npm install
