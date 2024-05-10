@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { AIChip } from '@/index';
+import { AIChip } from '../index';
 
 describe('Chip Component', () => {
   const label = 'Test Chip';

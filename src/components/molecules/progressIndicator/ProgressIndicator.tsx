@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Arrangement, Size2Hierarchy } from '@/common.type';
+import { Arrangement, Size2Hierarchy, ProgressIndicatorStates } from '@/common.type';
 import { Text } from '../../atoms/text';
 import { SaraSparkle } from '@/index';
 import classNames from 'classnames';
 import styles from './ProgressIndicator.module.css';
-import { ProgressIndicatorStates } from '@/common.type';
 
 export interface ProgressIndicatorProps {
   /**
