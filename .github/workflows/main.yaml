@@ -35,3 +35,14 @@ jobs:
 
       - name: Run Tests
         run: npm run test
+
+  deploy:
+    name: deploy storybook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build Storybook
+        run: npm run pre-deploy
+
+      - name: Deploy Storybook
+        run: npm run deploy-storybook
