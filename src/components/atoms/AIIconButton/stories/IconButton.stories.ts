@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconButton } from '@/index';
+import { AIIconButton } from '@/index';
 
 const meta = {
-  title: 'Components/IconButton',
-  component: IconButton,
+  title: 'Components/AIIconButton',
+  component: AIIconButton,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof IconButton>;
+} satisfies Meta<typeof AIIconButton>;
 
 export default meta;
 

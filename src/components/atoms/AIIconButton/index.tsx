@@ -55,7 +55,7 @@ export interface IconButtonProps {
   className?: string;
 }
 
-export const IconButton = (props: IconButtonProps) => {
+export const AIIconButton = (props: IconButtonProps) => {
   const { icon, position = 'top', shape, className, size = 'regular', ...rest } = props;
 
   const buttonClassNames = classNames(
@@ -107,4 +107,4 @@ export const IconButton = (props: IconButtonProps) => {
   );
 };
 
-export default IconButton;
+export default AIIconButton;
