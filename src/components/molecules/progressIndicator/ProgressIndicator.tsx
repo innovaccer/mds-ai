@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Alignment, Size2Hierarchy } from '@/common.type';
+import { Arrangement, Size2Hierarchy } from '@/common.type';
 import { Text } from '../../atoms/text';
 import { Icon } from '@/index';
 import classNames from 'classnames';
 import styles from './ProgressIndicator.module.css';
+import { ProgressIndicatorStates } from '@/common.type';
 
 export interface ProgressIndicatorProps {
   /**
@@ -15,13 +16,17 @@ export interface ProgressIndicatorProps {
    */
   size?: Size2Hierarchy;
   /**
-   * Defines alignment of Icon and Text in `Progress Indicator`
+   * Defines arrangement of Icon and Text in `Progress Indicator`
    */
-  alignment?: Alignment;
+  arrangement?: Arrangement;
   /**
    * Give alt text to icon of `Progress Indicator`
    */
   alt?: string;
+  /**
+   * Defines states for `Progress Indicator`
+   */
+  state?: ProgressIndicatorStates;
   /**
    * Stores custom testing data private to the component
    */
@@ -33,25 +38,25 @@ export interface ProgressIndicatorProps {
 }
 
 export const ProgressIndicator = (props: ProgressIndicatorProps) => {
-  const { label, size, alt, className, alignment, ...rest } = props;
+  const { label, size, alt, className, arrangement, state, ...rest } = props;
 
   const WrapperClassNames = classNames(
     {
       [styles.ProgressIndicator]: true,
-      [styles['ProgressIndicator--horizontal']]: alignment === 'horizontal',
-      [styles['ProgressIndicator--vertical']]: alignment === 'vertical',
+      [styles['ProgressIndicator--horizontal']]: arrangement === 'horizontal',
+      [styles['ProgressIndicator--vertical']]: arrangement === 'vertical',
     },
     className
   );
 
   const TextClassNames = classNames({
-    [styles['ProgressIndicator-Text--horizontal']]: alignment === 'horizontal',
-    [styles['ProgressIndicator-Text--vertical']]: alignment === 'vertical',
+    [styles['ProgressIndicator-Text--horizontal']]: arrangement === 'horizontal',
+    [styles['ProgressIndicator-Text--vertical']]: arrangement === 'vertical',
   });
 
   return (
     <div className={WrapperClassNames} {...rest}>
-      <Icon size={size} alt={alt || 'Progress Indicator Icon'} />
+      <Icon size={size} alt={alt || 'Progress Indicator Icon'} state={state} />
       <Text size={size} className={TextClassNames}>
         {label}
       </Text>
@@ -61,7 +66,7 @@ export const ProgressIndicator = (props: ProgressIndicatorProps) => {
 
 ProgressIndicator.defaultProps = {
   size: 'regular' as Size2Hierarchy,
-  alignment: 'horizontal' as Alignment,
+  arrangement: 'horizontal' as Arrangement,
 };
 
 export default ProgressIndicator;

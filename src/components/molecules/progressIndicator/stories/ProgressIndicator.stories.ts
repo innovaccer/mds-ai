@@ -23,7 +23,7 @@ export const Default: Story = {
 export const Vertical: Story = {
   args: {
     label: 'Sara is listening',
-    alignment: 'vertical',
+    arrangement: 'vertical',
     size: 'large',
   },
 };
