@@ -8,27 +8,27 @@ import AIProcessingShort from './assets/AI-Processing.json';
 
 export interface IconProps {
   /**
-   * Provide width to the `Icon`
+   * Provide width to the `SaraSparkle`
    */
   width?: number;
   /**
-   * Provide height to the `Icon`
+   * Provide height to the `SaraSparkle`
    */
   height?: number;
   /**
-   * Defines size of `Icon`
+   * Defines size of `SaraSparkle`
    */
   size?: Size4Hierarchy;
   /**
-   * Specify alt text to the `Icon`
+   * Specify alt text to the `SaraSparkle`
    */
   alt: string;
   /**
-   * Handler to be called when `Icon` is clicked
+   * Handler to be called when `SaraSparkle` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   /**
-   * Defines state for the `Icon`
+   * Defines state for the `SaraSparkle`
    */
   state?: IconStates;
   /**
@@ -41,7 +41,7 @@ export interface IconProps {
   'data-test'?: string;
 }
 
-export const Icon = (props: IconProps) => {
+export const SaraSparkle = (props: IconProps) => {
   const { width, height, size, alt, state, ...rest } = props;
 
   const sizeMapping = {
@@ -56,7 +56,14 @@ export const Icon = (props: IconProps) => {
 
   if (state === 'default') {
     return (
-      <img src={AIIcon} alt={alt} width={iconWidth} height={iconHeight} data-test="DesignSystem-AI-Icon" {...rest} />
+      <img
+        src={AIIcon}
+        alt={alt}
+        width={iconWidth}
+        height={iconHeight}
+        data-test="DesignSystem-AI-SaraSparkle"
+        {...rest}
+      />
     );
   }
 
@@ -79,10 +86,10 @@ export const Icon = (props: IconProps) => {
   );
 };
 
-Icon.defaultProps = {
+SaraSparkle.defaultProps = {
   width: 32,
   height: 32,
   state: 'default' as IconStates,
 };
 
-export default Icon;
+export default SaraSparkle;

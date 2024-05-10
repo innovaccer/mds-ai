@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AIChip } from '@/index';
 
 const meta = {
-  title: 'Components/AI Chip',
+  title: 'Components/AIChip',
   component: AIChip,
   parameters: {
     layout: 'centered',

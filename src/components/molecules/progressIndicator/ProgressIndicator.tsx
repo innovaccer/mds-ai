@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Arrangement, Size2Hierarchy } from '@/common.type';
 import { Text } from '../../atoms/text';
-import { Icon } from '@/index';
+import { SaraSparkle } from '@/index';
 import classNames from 'classnames';
 import styles from './ProgressIndicator.module.css';
 import { ProgressIndicatorStates } from '@/common.type';
@@ -56,7 +56,7 @@ export const ProgressIndicator = (props: ProgressIndicatorProps) => {
 
   return (
     <div className={WrapperClassNames} {...rest}>
-      <Icon size={size} alt={alt || 'Progress Indicator Icon'} state={state} />
+      <SaraSparkle size={size} alt={alt || 'Progress Indicator Icon'} state={state} />
       <Text size={size} className={TextClassNames}>
         {label}
       </Text>

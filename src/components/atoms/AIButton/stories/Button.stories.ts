@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AIButton } from '@/index';
 
 const meta = {
-  title: 'Components/AI Button',
+  title: 'Components/AIButton',
   component: AIButton,
   parameters: {
     layout: 'centered',
