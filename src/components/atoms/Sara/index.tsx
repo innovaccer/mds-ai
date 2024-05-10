@@ -1,32 +1,32 @@
 import * as React from 'react';
-import { Size3Hierarchy, AvatarStates } from '@/common.type';
+import { Size3Hierarchy, SaraStates } from '@/common.type';
 import { Player } from '@lottiefiles/react-lottie-player';
 import AIResting from './assets/AI-Resting.json';
-import AILogo from './assets/AI-Avatar.svg';
+import AILogo from './assets/AI-Sara.svg';
 
-export interface AvatarProps {
+export interface SaraProps {
   /**
-   * Provide width to the `Avatar`
+   * Provide width to the `Sara`
    */
   width?: number;
   /**
-   * Provide height to the `Avatar`
+   * Provide height to the `Sara`
    */
   height?: number;
   /**
-   * Specify alt text to the `Avatar`
+   * Specify alt text to the `Sara`
    */
   alt: string;
   /**
-   * Defines size of `Avatar`
+   * Defines size of `Sara`
    */
   size?: Size3Hierarchy;
   /**
-   * Defines state of `Avatar`
+   * Defines state of `Sara`
    */
-  state?: AvatarStates;
+  state?: SaraStates;
   /**
-   * Handler to be called when `Avatar` is clicked
+   * Handler to be called when `Sara` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   /**
@@ -39,7 +39,7 @@ export interface AvatarProps {
   'data-test'?: string;
 }
 
-export const Avatar = (props: AvatarProps) => {
+export const Sara = (props: SaraProps) => {
   const { width, height, alt, size, state, ...rest } = props;
 
   const sizeMapping = {
@@ -48,17 +48,17 @@ export const Avatar = (props: AvatarProps) => {
     large: 64,
   };
 
-  const avatarWidth = (size && sizeMapping[size]) || width;
-  const avatarHeight = (size && sizeMapping[size]) || height;
+  const saraWidth = (size && sizeMapping[size]) || width;
+  const saraHeight = (size && sizeMapping[size]) || height;
 
   if (state === 'default') {
     return (
       <img
         src={AILogo}
         alt={alt}
-        width={avatarWidth}
-        height={avatarHeight}
-        data-test="DesignSystem-AI-Avatar"
+        width={saraWidth}
+        height={saraHeight}
+        data-test="DesignSystem-Sara"
         {...rest}
       />
     );
@@ -66,15 +66,15 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <div {...rest}>
-      <Player autoplay loop src={AIResting} style={{ height: avatarHeight, width: avatarWidth }} />
+      <Player autoplay loop src={AIResting} style={{ height: saraHeight, width: saraWidth }} />
     </div>
   );
 };
 
-Avatar.defaultProps = {
+Sara.defaultProps = {
   width: 32,
   height: 32,
-  state: 'default' as AvatarStates,
+  state: 'default' as SaraStates,
 };
 
-export default Avatar;
+export default Sara;

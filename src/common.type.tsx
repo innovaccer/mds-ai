@@ -15,6 +15,6 @@ export type Size4Hierarchy = 'tiny' | 'regular' | 'medium' | 'large';
 export type Arrangement = 'horizontal' | 'vertical';
 
 /* Animation States */
-export type AvatarStates = 'default' | 'resting';
+export type SaraStates = 'default' | 'resting';
 export type IconStates = 'default' | 'listening' | 'short-processing' | 'long-processing';
 export type ProgressIndicatorStates = 'listening' | 'short-processing' | 'long-processing';
