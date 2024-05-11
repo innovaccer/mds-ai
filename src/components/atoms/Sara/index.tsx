@@ -65,7 +65,7 @@ export const Sara = (props: SaraProps) => {
   }
 
   return (
-    <div {...rest}>
+    <div data-test="DesignSystem-Sara" {...rest}>
       <Player autoplay loop src={AIResting} style={{ height: saraHeight, width: saraWidth }} />
     </div>
   );
