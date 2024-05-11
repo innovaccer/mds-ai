@@ -28,6 +28,7 @@ export const Text = (props: TextProps) => {
   const TextClassNames = classNames(
     {
       [styles.Text]: true,
+      [styles['shimmer-text']]: true,
       [styles['Text--regular']]: size === 'regular',
       [styles['Text--large']]: size === 'large',
     },
