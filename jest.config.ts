@@ -4,7 +4,7 @@ import path from "path";
 const config: Config = {
   clearMocks: true,
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/stories/**/*'],
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   moduleNameMapper: {
