@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styles from './Button.module.css';
 import classNames from 'classnames';
-import { ButtonAppearance, ButtonType } from '@/common.type';
+import { ButtonAppearance, ButtonType, BaseHtmlProps } from '@/common.type';
 import BasicIcon from './icons/Basic.svg';
 import PrimaryIcon from './icons/Primary.svg';
 
-export interface ButtonProps {
+export interface ButtonProps extends BaseHtmlProps<HTMLButtonElement> {
   /**
    * Pass label to `Button`
    */

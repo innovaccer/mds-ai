@@ -18,3 +18,6 @@ export type Arrangement = 'horizontal' | 'vertical';
 export type SaraStates = 'default' | 'resting';
 export type IconStates = 'default' | 'listening' | 'short-processing' | 'long-processing';
 export type ProgressIndicatorStates = 'listening' | 'short-processing' | 'long-processing';
+
+/* Generic Type */
+export type BaseHtmlProps<T> = Omit<React.HTMLProps<T>, ''>;
