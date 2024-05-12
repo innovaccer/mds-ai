@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './IconButton.module.css';
 import classNames from 'classnames';
-import { IconPosition, ButtonType, IconShape, Size2Hierarchy } from '@/common.type';
+import { IconPosition, ButtonType, Size2Hierarchy } from '@/common.type';
 import AIIcon from './icons/SaraIcon.svg';
 
 export interface IconButtonProps {
@@ -17,10 +17,6 @@ export interface IconButtonProps {
    * Defines position of AI Icon
    */
   position?: IconPosition;
-  /**
-   * Defines shape of `IconButton`
-   */
-  shape?: IconShape;
   /**
    * Type of `IconButton`
    */
@@ -56,12 +52,11 @@ export interface IconButtonProps {
 }
 
 export const AIIconButton = (props: IconButtonProps) => {
-  const { icon, position = 'top', shape, className, size = 'regular', ...rest } = props;
+  const { icon, position, className, size, ...rest } = props;
 
   const buttonClassNames = classNames(
     {
       [styles.IconButton]: true,
-      [styles['IconButton--round']]: shape === 'round',
     },
     className
   );
@@ -84,9 +79,9 @@ export const AIIconButton = (props: IconButtonProps) => {
   };
 
   const iconStyles = {
-    fontSize: `${sizeMapping[size]}px`,
-    width: `${sizeMapping[size]}px`,
-    height: `${sizeMapping[size]}px`,
+    fontSize: `${sizeMapping[size!]}px`,
+    width: `${sizeMapping[size!]}px`,
+    height: `${sizeMapping[size!]}px`,
   };
 
   return (
@@ -105,6 +100,11 @@ export const AIIconButton = (props: IconButtonProps) => {
       />
     </button>
   );
+};
+
+AIIconButton.defaultProps = {
+  size: 'regular' as Size2Hierarchy,
+  position: 'top' as IconPosition,
 };
 
 export default AIIconButton;

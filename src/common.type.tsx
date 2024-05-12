@@ -4,7 +4,6 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 
 /* Icon Button Component Types */
 export type IconPosition = 'top' | 'bottom';
-export type IconShape = 'round' | 'square';
 
 /* Sizes Types */
 export type Size2Hierarchy = 'regular' | 'large';

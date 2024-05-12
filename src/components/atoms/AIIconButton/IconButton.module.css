@@ -28,10 +28,6 @@
   pointer-events: none;
 }
 
-.IconButton--round {
-  border-radius: 50%;
-}
-
 .IconButton-Icon {
   overflow: hidden;
   flex-shrink: 0;
