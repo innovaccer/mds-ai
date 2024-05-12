@@ -3,6 +3,8 @@ import { Size3Hierarchy, SaraStates } from '@/common.type';
 import { Player } from '@lottiefiles/react-lottie-player';
 import AIResting from './assets/AI-Resting.json';
 import AILogo from './assets/AI-Sara.svg';
+import classNames from 'classnames';
+import styles from './Sara.module.css';
 
 export interface SaraProps {
   /**
@@ -40,7 +42,7 @@ export interface SaraProps {
 }
 
 export const Sara = (props: SaraProps) => {
-  const { width, height, alt, size, state, ...rest } = props;
+  const { width, height, alt, size, state, className, ...rest } = props;
 
   const sizeMapping = {
     regular: 32,
@@ -51,6 +53,13 @@ export const Sara = (props: SaraProps) => {
   const saraWidth = (size && sizeMapping[size]) || width;
   const saraHeight = (size && sizeMapping[size]) || height;
 
+  const SaraClassNames = classNames(
+    {
+      [styles['Sara--default']]: state === 'default',
+    },
+    className
+  );
+
   if (state === 'default') {
     return (
       <img
@@ -58,14 +67,15 @@ export const Sara = (props: SaraProps) => {
         alt={alt}
         width={saraWidth}
         height={saraHeight}
-        data-test="DesignSystem-Sara"
+        data-test="DesignSystem-AI-Sara"
+        className={SaraClassNames}
         {...rest}
       />
     );
   }
 
   return (
-    <div data-test="DesignSystem-Sara" {...rest}>
+    <div data-test="DesignSystem-AI-Sara" {...rest}>
       <Player autoplay loop src={AIResting} style={{ height: saraHeight, width: saraWidth }} />
     </div>
   );

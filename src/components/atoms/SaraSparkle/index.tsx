@@ -5,6 +5,8 @@ import AIIcon from './assets/AI-Icon.svg';
 import Listening from './assets/AI-Listening.json';
 import AIProcessingLong from './assets/AI-Processing-Long.json';
 import AIProcessingShort from './assets/AI-Processing.json';
+import classNames from 'classnames';
+import styles from './SaraSparkle.module.css';
 
 export interface IconProps {
   /**
@@ -42,7 +44,7 @@ export interface IconProps {
 }
 
 export const SaraSparkle = (props: IconProps) => {
-  const { width, height, size, alt, state, ...rest } = props;
+  const { width, height, size, alt, state, className, ...rest } = props;
 
   const sizeMapping = {
     tiny: 16,
@@ -54,6 +56,13 @@ export const SaraSparkle = (props: IconProps) => {
   const iconWidth = (size && sizeMapping[size]) || width;
   const iconHeight = (size && sizeMapping[size]) || height;
 
+  const SaraClassNames = classNames(
+    {
+      [styles['SaraSparkle--default']]: state === 'default',
+    },
+    className
+  );
+
   if (state === 'default') {
     return (
       <img
@@ -62,6 +71,7 @@ export const SaraSparkle = (props: IconProps) => {
         width={iconWidth}
         height={iconHeight}
         data-test="DesignSystem-AI-SaraSparkle"
+        className={SaraClassNames}
         {...rest}
       />
     );
