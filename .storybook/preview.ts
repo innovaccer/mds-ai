@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import "../css/index.css";
+import '@innovaccer/design-system/css';
 
 const preview: Preview = {
   parameters: {

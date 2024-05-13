@@ -47,8 +47,8 @@ export const AIChip = (props: ChipProps) => {
   const IconClassNames = classNames({
     [styles['Chip-Icon']]: true,
     [styles['Chip-Icon--disabled']]: disabled,
-    ['ai-material-symbols']: true,
-    ['ai-material-symbols-rounded']: true,
+    ['material-symbols']: true,
+    ['material-symbols-rounded']: true,
   });
 
   const TextClassNames = classNames({
