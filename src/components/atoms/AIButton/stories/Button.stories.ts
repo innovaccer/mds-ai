@@ -7,6 +7,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  tags: ['autodocs'],
 } satisfies Meta<typeof AIButton>;
 
 export default meta;
