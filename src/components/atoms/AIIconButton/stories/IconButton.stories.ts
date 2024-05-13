@@ -27,13 +27,6 @@ export const Disabled: Story = {
   },
 };
 
-export const Round: Story = {
-  args: {
-    shape: 'round',
-    icon: 'import_contacts',
-  },
-};
-
 export const PositionBottom: Story = {
   args: {
     icon: 'edit',
