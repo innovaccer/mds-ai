@@ -3,10 +3,9 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: {
-        (props: import("..").ProgressIndicatorProps): import("react").JSX.Element;
+        (props: import("..").ButtonProps): import("react").JSX.Element;
         defaultProps: {
-            size: import("../../../../common.type").Size2Hierarchy;
-            arrangement: import("../../../../common.type").Arrangement;
+            appearance: import("../../../../common.type").ButtonAppearance;
         };
     };
     parameters: {
@@ -16,5 +15,6 @@ declare const meta: {
 };
 export default meta;
 type Story = StoryObj<typeof meta>;
-export declare const Default: Story;
-export declare const Vertical: Story;
+export declare const Primary: Story;
+export declare const Basic: Story;
+export declare const Disabled: Story;

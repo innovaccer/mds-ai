@@ -1,6 +1,6 @@
 import React from 'react';
 // import { AIAvatar } from "./AIAvatar"
-import { Button } from '@/index';
+import { AIButton } from '@/index';
 import figma from '@figma/code-connect';
 
 /**
@@ -12,7 +12,7 @@ import figma from '@figma/code-connect';
  */
 
 figma.connect(
-  Button,
+  AIButton,
   'https://www.figma.com/file/opv0P1djjaOu2Iyv2yZ9Wz/MDS---AI-Components?type=design&node-id=2094-4925&mode=dev',
   {
     props: {
@@ -26,6 +26,6 @@ figma.connect(
       }),
     },
     // example: (props) => <AIAvatar />,
-    example: () => <Button />,
+    example: () => <AIButton />,
   }
 );
