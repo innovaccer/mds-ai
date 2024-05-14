@@ -63,8 +63,8 @@ export const AIIconButton = (props: IconButtonProps) => {
 
   const IconClassNames = classNames({
     [styles['IconButton-Icon']]: true,
-    ['ai-material-symbols']: true,
-    ['ai-material-symbols-rounded']: true,
+    ['material-symbols']: true,
+    ['material-symbols-rounded']: true,
   });
 
   const AIIconClassNames = classNames({
