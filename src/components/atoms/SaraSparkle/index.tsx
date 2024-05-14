@@ -1,12 +1,9 @@
 import * as React from 'react';
 import { Size4Hierarchy, IconStates } from '@/common.type';
-import { Player } from '@lottiefiles/react-lottie-player';
-import AIIcon from './assets/AI-Icon.svg';
-import Listening from './assets/AI-Listening.json';
-import AIProcessingLong from './assets/AI-Processing-Long.json';
-import AIProcessingShort from './assets/AI-Processing.json';
-import classNames from 'classnames';
-import styles from './SaraSparkle.module.css';
+import * as Listening from './assets/AI-Listening.json';
+import * as AIProcessingLong from './assets/AI-Processing-Long.json';
+import * as AIProcessingShort from './assets/AI-Processing.json';
+import Lottie from 'react-lottie';
 
 export interface IconProps {
   /**
@@ -18,21 +15,17 @@ export interface IconProps {
    */
   height?: number;
   /**
+   * Defines state for the `SaraSparkle`
+   */
+  state?: IconStates;
+  /**
    * Defines size of `SaraSparkle`
    */
   size?: Size4Hierarchy;
   /**
-   * Specify alt text to the `SaraSparkle`
-   */
-  alt: string;
-  /**
    * Handler to be called when `SaraSparkle` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  /**
-   * Defines state for the `SaraSparkle`
-   */
-  state?: IconStates;
   /**
    * Adds custom class
    */
@@ -44,7 +37,7 @@ export interface IconProps {
 }
 
 export const SaraSparkle = (props: IconProps) => {
-  const { width, height, size, alt, state, className, ...rest } = props;
+  const { width, height, size, state, ...rest } = props;
 
   const sizeMapping = {
     tiny: 16,
@@ -55,43 +48,27 @@ export const SaraSparkle = (props: IconProps) => {
 
   const iconWidth = (size && sizeMapping[size]) || width;
   const iconHeight = (size && sizeMapping[size]) || height;
+  const showAnimation = state !== 'default';
 
-  const SaraClassNames = classNames(
-    {
-      [styles['SaraSparkle--default']]: state === 'default',
-    },
-    className
-  );
-
-  if (state === 'default') {
-    return (
-      <img
-        src={AIIcon}
-        alt={alt}
-        width={iconWidth}
-        height={iconHeight}
-        data-test="DesignSystem-AI-SaraSparkle"
-        className={SaraClassNames}
-        {...rest}
-      />
-    );
-  }
-
-  const stateMapping = {
+  const stateMapping: Record<string, IconStates> = {
+    default: Listening,
     listening: Listening,
     'short-processing': AIProcessingShort,
     'long-processing': AIProcessingLong,
   };
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: showAnimation,
+    animationData: state && stateMapping[state],
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
-    <div {...rest}>
-      <Player
-        autoplay
-        loop
-        src={state && stateMapping[state]}
-        // style={{ height: iconHeight, width: iconWidth }}
-        style={{ height: iconHeight, width: 'auto' }}
-      />
+    <div data-test="DesignSystem-AI-Sara-Sparkle" {...rest}>
+      <Lottie options={defaultOptions} height={iconHeight} width={iconWidth} isStopped={!showAnimation} />
     </div>
   );
 };

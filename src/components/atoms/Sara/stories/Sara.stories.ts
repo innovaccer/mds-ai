@@ -15,29 +15,24 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    alt: 'MDS AI Sara',
-  },
+  args: {},
 };
 
 export const Regular: Story = {
   args: {
     size: 'regular',
-    alt: 'MDS AI Sara',
   },
 };
 
 export const Medium: Story = {
   args: {
     size: 'medium',
-    alt: 'MDS AI Sara',
   },
 };
 
 export const Large: Story = {
   args: {
     size: 'large',
-    alt: 'MDS AI Sara',
     onClick: () => console.log('Sara is clicked'),
   },
 };
@@ -46,6 +41,5 @@ export const CustomSize: Story = {
   args: {
     height: 100,
     width: 100,
-    alt: 'MDS AI Sara',
   },
 };

@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { Size3Hierarchy, SaraStates } from '@/common.type';
-import { Player } from '@lottiefiles/react-lottie-player';
-import AIResting from './assets/AI-Resting.json';
-import AILogo from './assets/AI-Sara.svg';
-import classNames from 'classnames';
-import styles from './Sara.module.css';
+import Lottie from 'react-lottie';
+import * as animationData from './assets/AI-Resting.json';
 
 export interface SaraProps {
   /**
@@ -15,10 +12,6 @@ export interface SaraProps {
    * Provide height to the `Sara`
    */
   height?: number;
-  /**
-   * Specify alt text to the `Sara`
-   */
-  alt: string;
   /**
    * Defines size of `Sara`
    */
@@ -42,7 +35,7 @@ export interface SaraProps {
 }
 
 export const Sara = (props: SaraProps) => {
-  const { width, height, alt, size, state, className, ...rest } = props;
+  const { width, height, size, state, ...rest } = props;
 
   const sizeMapping = {
     regular: 32,
@@ -52,31 +45,20 @@ export const Sara = (props: SaraProps) => {
 
   const saraWidth = (size && sizeMapping[size]) || width;
   const saraHeight = (size && sizeMapping[size]) || height;
+  const showAnimation = state !== 'default';
 
-  const SaraClassNames = classNames(
-    {
-      [styles['Sara--default']]: state === 'default',
+  const defaultOptions = {
+    loop: true,
+    autoplay: showAnimation,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
     },
-    className
-  );
-
-  if (state === 'default') {
-    return (
-      <img
-        src={AILogo}
-        alt={alt}
-        width={saraWidth}
-        height={saraHeight}
-        data-test="DesignSystem-AI-Sara"
-        className={SaraClassNames}
-        {...rest}
-      />
-    );
-  }
+  };
 
   return (
     <div data-test="DesignSystem-AI-Sara" {...rest}>
-      <Player autoplay loop src={AIResting} style={{ height: saraHeight, width: saraWidth }} />
+      <Lottie options={defaultOptions} height={saraHeight} width={saraWidth} isStopped={!showAnimation} />
     </div>
   );
 };

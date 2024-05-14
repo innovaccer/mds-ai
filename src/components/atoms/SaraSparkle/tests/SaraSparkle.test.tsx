@@ -1,51 +1,41 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import SaraSparkle, { IconProps } from '../index';
-import { IconStates, Size4Hierarchy } from '@/common.type';
+import { SaraSparkle } from '../index';
 
-const mockProps: IconProps = {
-  alt: 'Test Sara',
-  'data-test': 'sara-test-id',
-  size: 'regular' as Size4Hierarchy,
-  state: 'default',
-  onClick: jest.fn(),
-};
-
-describe('Sara Sparkle Component', () => {
-  it('renders correctly with default state', () => {
-    const { getByAltText } = render(<SaraSparkle {...mockProps} />);
-
-    const imageElement = getByAltText(mockProps.alt);
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('width', '24');
-    expect(imageElement).toHaveAttribute('height', '24');
-    expect(imageElement).toHaveAttribute('data-test', 'sara-test-id');
+describe('SaraSparkle Component', () => {
+  it('renders with default props', () => {
+    const { getByTestId } = render(<SaraSparkle />);
+    const saraElement = getByTestId('DesignSystem-AI-Sara-Sparkle');
+    expect(saraElement).toBeInTheDocument();
   });
 
-  it('renders correctly with custom size', () => {
-    const customSizeProps = { ...mockProps, size: 'medium' as Size4Hierarchy };
-    const { getByAltText } = render(<SaraSparkle {...customSizeProps} />);
-
-    const imageElement = getByAltText(customSizeProps.alt);
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('width', '32');
-    expect(imageElement).toHaveAttribute('height', '32');
+  it('renders with a custom size', () => {
+    const customSize = 'medium';
+    const { getByTestId } = render(<SaraSparkle size={customSize} />);
+    const saraElement = getByTestId('DesignSystem-AI-Sara-Sparkle');
+    expect(saraElement.firstChild).toHaveStyle(`width: 48px`);
+    expect(saraElement.firstChild).toHaveStyle(`height: 48px`);
   });
 
-  it('renders Lottie player when state is not default', () => {
-    const animatedStateProps = { ...mockProps, state: 'resting' as IconStates };
-    const { getByTestId } = render(<SaraSparkle {...animatedStateProps} />);
-
-    const lottiePlayer = getByTestId('sara-test-id');
-    expect(lottiePlayer).toBeInTheDocument();
+  it('calls onClick prop when SaraSparkle is clicked', () => {
+    const handleClick = jest.fn();
+    const { getByTestId } = render(<SaraSparkle onClick={handleClick} />);
+    const saraElement = getByTestId('DesignSystem-AI-Sara-Sparkle');
+    fireEvent.click(saraElement);
+    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('triggers onClick when clicked', () => {
-    const { getByAltText } = render(<SaraSparkle {...mockProps} />);
-    const imageElement = getByAltText(mockProps.alt);
+  it('applies `data-test` attribute properly', () => {
+    const testDataValue = 'sara-component';
+    const { getByTestId } = render(<SaraSparkle data-test={testDataValue} />);
+    const saraElement = getByTestId('sara-component');
+    expect(saraElement.getAttribute('data-test')).toBe(testDataValue);
+  });
 
-    fireEvent.click(imageElement);
-
-    expect(mockProps.onClick).toHaveBeenCalledTimes(1);
+  it('applies custom className', () => {
+    const customClass = 'custom-sara-class';
+    const { getByTestId } = render(<SaraSparkle className={customClass} />);
+    const saraElement = getByTestId('DesignSystem-AI-Sara-Sparkle');
+    expect(saraElement).toHaveClass(customClass);
   });
 });
