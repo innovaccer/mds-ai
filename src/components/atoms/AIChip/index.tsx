@@ -20,10 +20,6 @@ export interface ChipProps {
    */
   name?: string;
   /**
-   * Handler to be called when Chip is clicked
-   */
-  onClick?: (name: string | undefined) => void;
-  /**
    * Stores custom testing data private to the component.
    */
   'data-test'?: string;
@@ -34,7 +30,7 @@ export interface ChipProps {
 }
 
 export const AIChip = (props: ChipProps) => {
-  const { label, icon, disabled, name, className, onClick, ...rest } = props;
+  const { label, icon, disabled, name, className, ...rest } = props;
 
   const ChipClassNames = classNames(
     {
@@ -56,16 +52,8 @@ export const AIChip = (props: ChipProps) => {
     [styles['Chip-Text--disabled']]: disabled,
   });
 
-  const onClickHandler = () => {
-    if (disabled) {
-      return;
-    }
-    onClick?.(name);
-  };
-
   return (
-    // eslint-disable-next-line
-    <div data-test="DesignSystem-AI-Chip" className={ChipClassNames} onClick={onClickHandler} {...rest}>
+    <button data-test="DesignSystem-AI-Chip" className={ChipClassNames} {...rest}>
       <i data-test="DesignSystem-AI-Chip-Icon" className={IconClassNames}>
         {icon}
       </i>
@@ -73,7 +61,7 @@ export const AIChip = (props: ChipProps) => {
       <span data-test="DesignSystem-AI-Chip-Text" className={TextClassNames}>
         {label}
       </span>
-    </div>
+    </button>
   );
 };
 
