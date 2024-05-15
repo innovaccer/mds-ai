@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styles from './Chip.module.css';
 import classNames from 'classnames';
+import { BaseHtmlProps, ButtonType } from '@/common.type';
 
-export interface ChipProps {
+export interface ChipProps extends BaseHtmlProps<HTMLButtonElement> {
   /**
    * Label of `Chip`
    */
@@ -19,6 +20,10 @@ export interface ChipProps {
    * Name of chip
    */
   name?: string;
+  /**
+   * Type of `Chip`
+   */
+  type?: ButtonType;
   /**
    * Stores custom testing data private to the component.
    */
