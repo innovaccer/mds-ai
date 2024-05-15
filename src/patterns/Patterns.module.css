@@ -1,0 +1,16 @@
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(to right, #595959, #c5c5c5, #c5c5c5, #595959);
+  background-size: 200% 100%;
+  animation: shimmer 720ms infinite cubic-bezier(0.4, 0.14, 0.3, 1);
+  color: transparent;
+  background-clip: text;
+}
