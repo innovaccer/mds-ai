@@ -58,7 +58,7 @@ export const AIChip = (props: ChipProps) => {
   });
 
   return (
-    <button data-test="DesignSystem-AI-Chip" className={ChipClassNames} {...rest}>
+    <button data-test="DesignSystem-AI-Chip" className={ChipClassNames} disabled={disabled} {...rest}>
       <i data-test="DesignSystem-AI-Chip-Icon" className={IconClassNames}>
         {icon}
       </i>

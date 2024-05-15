@@ -20,7 +20,7 @@ describe('Chip Component', () => {
     const chip = getByTestId('DesignSystem-AI-Chip');
     fireEvent.click(chip!);
 
-    expect(mockOnClick).toHaveBeenCalled();
+    expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 
   it('does not call onClick when the Chip is disabled', () => {

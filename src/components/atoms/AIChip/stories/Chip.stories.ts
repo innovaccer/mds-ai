@@ -26,6 +26,7 @@ export const Disabled: Story = {
     icon: 'edit_note',
     label: 'Action chip',
     disabled: true,
+    onClick: (prop) => console.log('Action Chip Called', prop),
   },
 };
 

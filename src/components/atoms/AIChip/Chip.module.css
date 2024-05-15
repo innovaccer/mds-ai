@@ -62,3 +62,8 @@
 .Chip-Text--disabled {
   color: var(--inverse-lightest);
 }
+
+.Chip:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
