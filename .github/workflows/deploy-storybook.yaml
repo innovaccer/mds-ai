@@ -3,7 +3,7 @@ name: Build and Deploy storybook to GitHub Pages
 on:
   push:
     branches:
-      - develop  # Set this to your default branch
+      - main  # Set this to your default branch
 
 jobs:
   build:
