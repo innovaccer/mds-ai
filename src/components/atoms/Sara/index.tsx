@@ -1,21 +1,13 @@
 import * as React from 'react';
-import { Size3Hierarchy, SaraStates } from '@/common.type';
+import { SaraStates, BaseHtmlProps } from '@/common.type';
 import Lottie from 'react-lottie';
 import * as animationData from './assets/AI-Resting.json';
 
-export interface SaraProps {
-  /**
-   * Provide width to the `Sara`
-   */
-  width?: number;
-  /**
-   * Provide height to the `Sara`
-   */
-  height?: number;
+export interface SaraProps extends BaseHtmlProps<HTMLDivElement> {
   /**
    * Defines size of `Sara`
    */
-  size?: Size3Hierarchy;
+  size?: number;
   /**
    * Defines state of `Sara`
    */
@@ -35,16 +27,8 @@ export interface SaraProps {
 }
 
 export const Sara = (props: SaraProps) => {
-  const { width, height, size, state, ...rest } = props;
+  const { size, state, ...rest } = props;
 
-  const sizeMapping = {
-    regular: 32,
-    medium: 48,
-    large: 64,
-  };
-
-  const saraWidth = (size && sizeMapping[size]) || width;
-  const saraHeight = (size && sizeMapping[size]) || height;
   const showAnimation = state !== 'default';
 
   const defaultOptions = {
@@ -58,14 +42,13 @@ export const Sara = (props: SaraProps) => {
 
   return (
     <div data-test="DesignSystem-AI-Sara" {...rest}>
-      <Lottie options={defaultOptions} height={saraHeight} width={saraWidth} isStopped={!showAnimation} />
+      <Lottie options={defaultOptions} height={size} width={size} isStopped={!showAnimation} />
     </div>
   );
 };
 
 Sara.defaultProps = {
-  width: 32,
-  height: 32,
+  size: 32,
   state: 'default' as SaraStates,
 };
 

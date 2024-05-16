@@ -24,13 +24,6 @@ export const Tiny: Story = {
   },
 };
 
-export const Regular: Story = {
-  args: {
-    size: 24,
-    state: 'listening',
-  },
-};
-
 export const Medium: Story = {
   args: {
     size: 32,

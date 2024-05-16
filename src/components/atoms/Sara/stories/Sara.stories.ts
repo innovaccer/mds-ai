@@ -18,28 +18,22 @@ export const Default: Story = {
   args: {},
 };
 
-export const Regular: Story = {
-  args: {
-    size: 'regular',
-  },
-};
-
 export const Medium: Story = {
   args: {
-    size: 'medium',
+    size: 48,
+    state: 'resting',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: 64,
     onClick: () => console.log('Sara is clicked'),
   },
 };
 
 export const CustomSize: Story = {
   args: {
-    height: 100,
-    width: 100,
+    size: 100,
   },
 };

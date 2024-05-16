@@ -7,13 +7,13 @@ import Lottie from 'react-lottie';
 
 export interface IconProps extends BaseHtmlProps<HTMLDivElement> {
   /**
-   * Defines state for the `SaraSparkle`
-   */
-  state?: SaraSparkleStates;
-  /**
    * Defines size of `SaraSparkle`
    */
   size?: number;
+  /**
+   * Defines state for the `SaraSparkle`
+   */
+  state?: SaraSparkleStates;
   /**
    * Handler to be called when `SaraSparkle` is clicked
    */
