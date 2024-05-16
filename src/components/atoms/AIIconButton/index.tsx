@@ -1,10 +1,10 @@
 import * as React from 'react';
 import styles from './IconButton.module.css';
 import classNames from 'classnames';
-import { IconPosition, ButtonType, Size2Hierarchy } from '@/common.type';
+import { IconPosition, ButtonType, Size2Hierarchy, BaseHtmlProps } from '@/common.type';
 import AIIcon from './icons/SaraIcon.svg';
 
-export interface IconButtonProps {
+export interface IconButtonProps extends Omit<BaseHtmlProps<HTMLButtonElement>, 'size'> {
   /**
    * Name of the Icon
    */
@@ -89,7 +89,6 @@ export const AIIconButton = (props: IconButtonProps) => {
       <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles}>
         {icon}
       </i>
-      {/* <Icon alt="nested icon" size="tiny" className={AIIconClassNames} /> */}
       <img
         src={AIIcon}
         alt="Icon"
