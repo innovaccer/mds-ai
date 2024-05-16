@@ -7,10 +7,6 @@ import PrimaryIcon from './icons/Primary.svg';
 
 export interface ButtonProps extends BaseHtmlProps<HTMLButtonElement> {
   /**
-   * Pass label to `Button`
-   */
-  label?: string;
-  /**
    * Defines Appearance of the `Button`
    */
   appearance?: ButtonAppearance;
@@ -25,7 +21,7 @@ export interface ButtonProps extends BaseHtmlProps<HTMLButtonElement> {
   /**
    * Pass children to `Button`
    */
-  children?: React.ReactNode;
+  children?: string;
   /**
    * Specifies tab index of `Button`
    */
@@ -53,7 +49,7 @@ export interface ButtonProps extends BaseHtmlProps<HTMLButtonElement> {
 }
 
 export const AIButton = (props: ButtonProps) => {
-  const { appearance, className, label, children, ...rest } = props;
+  const { appearance, className, children, ...rest } = props;
 
   const buttonClassNames = classNames(
     {
@@ -80,7 +76,7 @@ export const AIButton = (props: ButtonProps) => {
         className={IconClassNames}
         data-test="DesignSystem-AI-Button-Icon"
       />
-      {label || children}
+      {children}
     </button>
   );
 };

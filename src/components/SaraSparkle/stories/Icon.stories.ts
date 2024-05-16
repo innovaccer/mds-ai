@@ -21,6 +21,7 @@ export const Default: Story = {
 export const Tiny: Story = {
   args: {
     size: 16,
+    state: 'listening',
   },
 };
 
