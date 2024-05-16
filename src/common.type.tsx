@@ -15,7 +15,7 @@ export type Arrangement = 'horizontal' | 'vertical';
 
 /* Animation States */
 export type SaraStates = 'default' | 'resting';
-export type IconStates = 'default' | 'listening' | 'short-processing' | 'long-processing';
+export type SaraSparkleStates = 'default' | 'listening' | 'short-processing' | 'long-processing';
 export type ProgressIndicatorStates = 'listening' | 'short-processing' | 'long-processing';
 
 /* Generic Type */

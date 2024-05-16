@@ -20,32 +20,34 @@ export const Default: Story = {
 
 export const Tiny: Story = {
   args: {
-    size: 'tiny',
+    size: 16,
   },
 };
 
 export const Regular: Story = {
   args: {
-    size: 'regular',
+    size: 24,
+    state: 'listening',
   },
 };
 
 export const Medium: Story = {
   args: {
-    size: 'medium',
+    size: 32,
+    state: 'long-processing',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: 48,
     onClick: () => console.log('Large story click'),
+    state: 'short-processing',
   },
 };
 
 export const CustomSize: Story = {
   args: {
-    height: 100,
-    width: 100,
+    size: 100,
   },
 };
