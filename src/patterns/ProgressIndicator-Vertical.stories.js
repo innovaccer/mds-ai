@@ -34,7 +34,7 @@ export const Vertical = () => {
 
   return (
     <div className="d-flex align-items-center justify-content-center flex-column">
-      <SaraSparkle size="large" state="listening" className="mb-3" />
+      <SaraSparkle size={48} state="listening" className="mb-3" />
       <Text className={styles['shimmer-text']} size="large">
         Sara is listening
       </Text>
