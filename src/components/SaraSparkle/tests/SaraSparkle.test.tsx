@@ -10,11 +10,11 @@ describe('SaraSparkle Component', () => {
   });
 
   it('renders with a custom size', () => {
-    const customSize = 'medium';
+    const customSize = 100;
     const { getByTestId } = render(<SaraSparkle size={customSize} />);
     const saraElement = getByTestId('DesignSystem-AI-Sara-Sparkle');
-    expect(saraElement.firstChild).toHaveStyle(`width: 32px`);
-    expect(saraElement.firstChild).toHaveStyle(`height: 32px`);
+    expect(saraElement.firstChild).toHaveStyle(`width: 100px`);
+    expect(saraElement.firstChild).toHaveStyle(`height: 100px`);
   });
 
   it('calls onClick prop when SaraSparkle is clicked', () => {

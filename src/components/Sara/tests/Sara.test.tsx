@@ -10,11 +10,11 @@ describe('Sara Component', () => {
   });
 
   it('renders with a custom size', () => {
-    const customSize = 'medium';
+    const customSize = 100;
     const { getByTestId } = render(<Sara size={customSize} />);
     const saraElement = getByTestId('DesignSystem-AI-Sara');
-    expect(saraElement.firstChild).toHaveStyle(`width: 48px`);
-    expect(saraElement.firstChild).toHaveStyle(`height: 48px`);
+    expect(saraElement.firstChild).toHaveStyle(`width: 100px`);
+    expect(saraElement.firstChild).toHaveStyle(`height: 100px`);
   });
 
   it('calls onClick prop when Sara is clicked', () => {
