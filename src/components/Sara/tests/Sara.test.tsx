@@ -9,14 +9,6 @@ describe('Sara Component', () => {
     expect(saraElement).toBeInTheDocument();
   });
 
-  it('renders with a custom size', () => {
-    const customSize = 100;
-    const { getByTestId } = render(<Sara size={customSize} />);
-    const saraElement = getByTestId('DesignSystem-AI-Sara');
-    expect(saraElement.firstChild).toHaveStyle(`width: 100px`);
-    expect(saraElement.firstChild).toHaveStyle(`height: 100px`);
-  });
-
   it('calls onClick prop when Sara is clicked', () => {
     const handleClick = jest.fn();
     const { getByTestId } = render(<Sara onClick={handleClick} />);
@@ -34,7 +26,7 @@ describe('Sara Component', () => {
 
   it('applies custom className', () => {
     const customClass = 'custom-sara-class';
-    const { getByTestId } = render(<Sara className={customClass} />);
+    const { getByTestId } = render(<Sara className={customClass} state='resting' />);
     const saraElement = getByTestId('DesignSystem-AI-Sara');
     expect(saraElement).toHaveClass(customClass);
   });

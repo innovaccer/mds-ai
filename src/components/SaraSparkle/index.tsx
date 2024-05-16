@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { SaraSparkleStates, BaseHtmlProps } from '@/common.type';
-import * as Listening from './assets/AI-Listening.json';
-import * as AIProcessingLong from './assets/AI-Processing-Long.json';
-import * as AIProcessingShort from './assets/AI-Processing.json';
-import Lottie from 'react-lottie';
+import { Player } from '@lottiefiles/react-lottie-player';
+import AIIcon from './assets/AI-Icon.svg';
+import Listening from './assets/AI-Listening.json';
+import AIProcessingLong from './assets/AI-Processing-Long.json';
+import AIProcessingShort from './assets/AI-Processing.json';
+import classNames from 'classnames';
+import styles from './SaraSparkle.module.css';
 
 export interface IconProps extends BaseHtmlProps<HTMLDivElement> {
   /**
@@ -14,6 +17,10 @@ export interface IconProps extends BaseHtmlProps<HTMLDivElement> {
    * Defines state for the `SaraSparkle`
    */
   state?: SaraSparkleStates;
+  /**
+   * Specify alt text to the `SaraSparkle` for `default` state
+   */
+  alt?: string;
   /**
    * Handler to be called when `SaraSparkle` is clicked
    */
@@ -29,29 +36,37 @@ export interface IconProps extends BaseHtmlProps<HTMLDivElement> {
 }
 
 export const SaraSparkle = (props: IconProps) => {
-  const { size, state, ...rest } = props;
-
-  const showAnimation = state !== 'default';
+  const { size, state, alt, className, ...rest } = props;
 
   const stateMapping: Record<string, SaraSparkleStates> = {
-    default: Listening,
     listening: Listening,
     'short-processing': AIProcessingShort,
     'long-processing': AIProcessingLong,
   };
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: showAnimation,
-    animationData: state && stateMapping[state],
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
+  const SaraClassNames = classNames(
+    {
+      [styles['SaraSparkle--default']]: state === 'default',
     },
-  };
+    className
+  );
+
+  if (state === 'default') {
+    return (
+      <div data-test="DesignSystem-AI-Sara-Sparkle" {...rest}>
+        <img src={AIIcon} alt={alt} width={size} height={size} className={SaraClassNames} />
+      </div>
+    );
+  }
 
   return (
-    <div data-test="DesignSystem-AI-Sara-Sparkle" {...rest}>
-      <Lottie options={defaultOptions} height={size} width={size} isStopped={!showAnimation} />
+    <div data-test="DesignSystem-AI-Sara-Sparkle" className={className} {...rest}>
+      <Player
+        autoplay
+        loop
+        src={(state && stateMapping[state]) || Listening}
+        style={{ height: size, width: size }}
+      />
     </div>
   );
 };

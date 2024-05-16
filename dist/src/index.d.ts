@@ -1,6 +1,5 @@
-export { AIButton } from './components/atoms/AIButton';
-export { AIIconButton } from './components/atoms/AIIconButton';
-export { Sara } from './components/atoms/Sara';
-export { SaraSparkle } from './components/atoms/SaraSparkle';
-export { AIChip } from './components/atoms/AIChip';
-export { ProgressIndicator } from './components/molecules/progressIndicator';
+export { Sara } from './components/Sara';
+export { AIChip } from './components/AIChip';
+export { AIButton } from './components/AIButton';
+export { SaraSparkle } from './components/SaraSparkle';
+export { AIIconButton } from './components/AIIconButton';
