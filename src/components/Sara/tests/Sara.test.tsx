@@ -26,7 +26,7 @@ describe('Sara Component', () => {
 
   it('applies custom className', () => {
     const customClass = 'custom-sara-class';
-    const { getByTestId } = render(<Sara className={customClass} state='resting' />);
+    const { getByTestId } = render(<Sara className={customClass} state="resting" />);
     const saraElement = getByTestId('DesignSystem-AI-Sara');
     expect(saraElement).toHaveClass(customClass);
   });

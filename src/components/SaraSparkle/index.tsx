@@ -61,12 +61,7 @@ export const SaraSparkle = (props: IconProps) => {
 
   return (
     <div data-test="DesignSystem-AI-Sara-Sparkle" className={className} {...rest}>
-      <Player
-        autoplay
-        loop
-        src={(state && stateMapping[state]) || Listening}
-        style={{ height: size, width: size }}
-      />
+      <Player autoplay loop src={(state && stateMapping[state]) || Listening} style={{ height: size, width: size }} />
     </div>
   );
 };
