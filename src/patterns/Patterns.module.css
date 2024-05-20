@@ -1,16 +1,178 @@
-@keyframes shimmer {
+.shimmer-text1 {
+  display: inline-block;
+  color: white;
+  background: #595959 -webkit-gradient(linear, 100% 0, 0 0, from(#595959), color-stop(0.5, #c5c5c5), to(#595959));
+  /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 1%, #c5c5c5 6%, #595959 100%); */
+  /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 94%, #c5c5c5 99%, #595959 100%); */
+
+  background-position: -4rem top;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer1;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 4rem 100%;
+  animation-fill-mode: forwards;
+  /* left: -100%;
+      position: absolute; */
+}
+
+@-webkit-keyframes shimmer1 {
+  0% {
+    /* transform: translateX(-100%); */
+    background-position: -4rem top;
+
+    /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 1%, #c5c5c5 6%, #595959 100%); */
+  }
+  50% {
+    /* transform: translateX(100%); */
+    background-position: 12.5rem top;
+
+    /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 94%, #c5c5c5 99%, #595959 100%); */
+  }
+  100% {
+    /* transform: translateX(200%); */
+    background-position: 12.5rem top;
+
+    /* background: linear-gradient(90deg, #595959 0%, #595959 1%, #595959 6%, #595959 100%); */
+  }
+}
+
+.shimmer-text2 {
+  position: relative;
+  /* font-size: 2em;
+  font-weight: bold; */
+  color: #595959;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.shimmer-text2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  background: linear-gradient(90deg, #595959 0%, #c5c5c5 1%, #c5c5c5 6%, #595959 100%);
+  animation: shimmer2 720ms cubic-bezier(0.4, 0.14, 0.3, 1) infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shimmer2 {
+  0% {
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, #595959 0%, #c5c5c5 1%, #c5c5c5 6%, #595959 100%);
+  }
+  50% {
+    transform: translateX(100%);
+    background: linear-gradient(90deg, #595959 0%, #c5c5c5 94%, #c5c5c5 99%, #595959 100%);
+  }
+  100% {
+    transform: translateX(200%);
+    background: linear-gradient(90deg, #595959 0%, #595959 1%, #595959 6%, #595959 100%);
+  }
+}
+
+@keyframes shimmer3 {
   0% {
     background-position: 100% 0;
+  }
+  50% {
+    background-position: 150% 0;
   }
   100% {
     background-position: 200% 0;
   }
 }
 
-.shimmer-text {
+.shimmer-text3 {
   background: linear-gradient(to right, #595959, #c5c5c5, #c5c5c5, #595959);
   background-size: 200% 100%;
-  animation: shimmer 720ms infinite cubic-bezier(0.4, 0.14, 0.3, 1);
+  animation: shimmer3 720ms infinite cubic-bezier(0.4, 0.14, 0.3, 1);
+  animation-fill-mode: forwards;
   color: transparent;
   background-clip: text;
+}
+
+@keyframes shimmer4 {
+  0% {
+    background-position: 100% 0;
+    /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 94%, #c5c5c5 99%, #595959 100%); */
+  }
+  100% {
+    background-position: 200% 0;
+    /* background: linear-gradient(90deg, #595959 0%, #595959 1%, #595959 6%, #595959 100%); */
+  }
+}
+
+.shimmer-text4 {
+  background: linear-gradient(to right, #595959, #c5c5c5, #c5c5c5, #595959);
+  background-size: 200% 100%;
+  animation: shimmer4 720ms infinite cubic-bezier(0.4, 0.14, 0.3, 1);
+  animation-fill-mode: forwards;
+  color: transparent;
+  background-clip: text;
+}
+
+.shimmer-text5 {
+  position: relative;
+  /* font-size: 2em;
+  font-weight: bold; */
+  color: #595959;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.shimmer-child {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 1%, #c5c5c5 6%, #595959 100%); */
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  animation: shimmer5 720ms cubic-bezier(0.4, 0.14, 0.3, 1) infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shimmer5 {
+  0% {
+    transform: translateX(-100%);
+    /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 1%, #c5c5c5 6%, #595959 100%); */
+  }
+  100% {
+    transform: translateX(100%);
+    /* background: linear-gradient(90deg, #595959 0%, #c5c5c5 94%, #c5c5c5 99%, #595959 100%); */
+  }
+}
+
+.shimmer-text6 {
+  color: rgba(255, 255, 255, 0.1);
+  /* background: linear-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #c5c5c5) ); */
+  background: #595959 -webkit-gradient(linear, left top, right top, from(#595959), color-stop(0.5, #c5c5c5), to(#595959));
+  background-size: 20% 100%;
+  background-clip: text;
+  animation-name: shimmer6;
+  animation-duration: 720ms;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+}
+
+@keyframes shimmer6 {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
 }
