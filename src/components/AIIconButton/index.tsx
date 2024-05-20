@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './IconButton.module.css';
 import classNames from 'classnames';
 import { IconPosition, ButtonType, Size2Hierarchy, BaseHtmlProps } from '@/common.type';
-import AIIcon from './icons/SaraIcon.svg';
+import SaraIcon from './SaraIcon';
 
 export interface IconButtonProps extends Omit<BaseHtmlProps<HTMLButtonElement>, 'size'> {
   /**
@@ -30,6 +30,10 @@ export interface IconButtonProps extends Omit<BaseHtmlProps<HTMLButtonElement>, 
    */
   tabIndex?: number;
   /**
+   * Defines color of the `IconButton`
+   */
+  color?: string;
+  /**
    * Handler to be called when `IconButton` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -52,7 +56,7 @@ export interface IconButtonProps extends Omit<BaseHtmlProps<HTMLButtonElement>, 
 }
 
 export const AIIconButton = (props: IconButtonProps) => {
-  const { icon, position, className, size, ...rest } = props;
+  const { icon, position, className, size, color, ...rest } = props;
 
   const buttonClassNames = classNames(
     {
@@ -82,21 +86,15 @@ export const AIIconButton = (props: IconButtonProps) => {
     fontSize: `${sizeMapping[size!]}px`,
     width: `${sizeMapping[size!]}px`,
     height: `${sizeMapping[size!]}px`,
+    color: 'rgb(0, 0, 0)',
   };
 
   return (
-    <button className={buttonClassNames} data-test="DesignSystem-AI-IconButton" {...rest}>
+    <button className={buttonClassNames} data-test="DesignSystem-AI-IconButton" {...rest} style={{ color }}>
       <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles}>
         {icon}
       </i>
-      <img
-        src={AIIcon}
-        alt="Icon"
-        width={16}
-        height={16}
-        data-test="DesignSystem-AI-Icon"
-        className={AIIconClassNames}
-      />
+      <SaraIcon className={AIIconClassNames} />
     </button>
   );
 };
@@ -104,6 +102,7 @@ export const AIIconButton = (props: IconButtonProps) => {
 AIIconButton.defaultProps = {
   size: 'regular' as Size2Hierarchy,
   position: 'top' as IconPosition,
+  color: '#fff',
 };
 
 export default AIIconButton;

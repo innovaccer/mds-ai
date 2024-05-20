@@ -13,10 +13,12 @@
 
 .IconButton:hover {
   background: var(--secondary);
+  color: var(--secondary) !important;
 }
 
 .IconButton:active {
   background: var(--secondary-dark);
+  color: var(--secondary-dark) !important;
 }
 
 .IconButton:focus {
