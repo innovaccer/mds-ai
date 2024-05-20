@@ -19,6 +19,11 @@ export const Primary: Story = {
     children: 'Primary Button',
     appearance: 'primary',
   },
+  parameters: {
+    storySource: {
+      source: '<AIButton appearance="primary">Primary Button</AIButton>',
+    },
+  },
 };
 
 export const Basic: Story = {

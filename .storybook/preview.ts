@@ -10,6 +10,11 @@ const preview: Preview = {
       },
       expanded: true,
     },
+    docs: {
+      canvas: {
+        sourceState: 'shown',
+      },
+    },
   },
 };
 
