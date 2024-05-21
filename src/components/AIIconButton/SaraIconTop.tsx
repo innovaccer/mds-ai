@@ -4,7 +4,7 @@ type SaraIconType = {
   className?: string;
 };
 
-const SaraIcon = (props: SaraIconType) => {
+const SaraIconTop = (props: SaraIconType) => {
   const { className } = props;
 
   return (
@@ -53,4 +53,4 @@ const SaraIcon = (props: SaraIconType) => {
   );
 };
 
-export default SaraIcon;
+export default SaraIconTop;

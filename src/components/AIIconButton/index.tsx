@@ -2,7 +2,8 @@ import * as React from 'react';
 import styles from './IconButton.module.css';
 import classNames from 'classnames';
 import { IconPosition, ButtonType, Size2Hierarchy, BaseHtmlProps } from '@/common.type';
-import SaraIcon from './SaraIcon';
+import SaraIconTop from './SaraIconTop';
+import SaraIconBottom from './SaraIconBottom';
 
 export interface IconButtonProps extends Omit<BaseHtmlProps<HTMLButtonElement>, 'size'> {
   /**
@@ -94,7 +95,11 @@ export const AIIconButton = (props: IconButtonProps) => {
       <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles}>
         {icon}
       </i>
-      <SaraIcon className={AIIconClassNames} />
+      {position === 'top' ? (
+        <SaraIconTop className={AIIconClassNames} />
+      ) : (
+        <SaraIconBottom className={AIIconClassNames} />
+      )}
     </button>
   );
 };
