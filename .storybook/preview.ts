@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
 import '@innovaccer/design-system/css';
 
 const preview: Preview = {
@@ -11,6 +11,7 @@ const preview: Preview = {
       expanded: true,
     },
     docs: {
+      toc: true,
       canvas: {
         sourceState: 'shown',
       },
