@@ -3,6 +3,7 @@ import { SaraSparkleStates, BaseHtmlProps } from '@/common.type';
 export interface IconProps extends BaseHtmlProps<HTMLDivElement> {
     size?: number;
     state?: SaraSparkleStates;
+    alt?: string;
     onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     className?: string;
     'data-test'?: string;

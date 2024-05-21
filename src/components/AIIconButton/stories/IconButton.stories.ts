@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AIIconButton } from '@/index';
 
-const meta = {
+const meta: Meta<typeof AIIconButton> = {
   title: 'Components/AIIconButton',
   component: AIIconButton,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof AIIconButton>;
+};
 
 export default meta;
 

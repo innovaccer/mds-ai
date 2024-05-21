@@ -1,21 +1,8 @@
-/// <reference types="react" />
-import type { StoryObj } from '@storybook/react';
-declare const meta: {
-    title: string;
-    component: {
-        (props: import("..").IconProps): import("react").JSX.Element;
-        defaultProps: {
-            size: number;
-            state: import("../../../common.type").SaraSparkleStates;
-        };
-    };
-    parameters: {
-        layout: string;
-    };
-    tags: string[];
-};
+import type { Meta, StoryObj } from '@storybook/react';
+import { SaraSparkle } from '@/index';
+declare const meta: Meta<typeof SaraSparkle>;
 export default meta;
-type Story = StoryObj<typeof meta>;
+declare type Story = StoryObj<typeof meta>;
 export declare const Default: Story;
 export declare const Tiny: Story;
 export declare const Medium: Story;

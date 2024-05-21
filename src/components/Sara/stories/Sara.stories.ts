@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Sara } from '@/index';
 
-const meta = {
+const meta: Meta<typeof Sara> = {
   title: 'Components/Sara',
   component: Sara,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Sara>;
+};
 
 export default meta;
 

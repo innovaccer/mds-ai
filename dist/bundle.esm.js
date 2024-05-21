@@ -19,6 +19,17 @@ PERFORMANCE OF THIS SOFTWARE.
 /* global Reflect, Promise, SuppressedError, Symbol */
 
 
+var __assign$1 = function() {
+    __assign$1 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign$1.apply(this, arguments);
+};
+
 function __rest(s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -1189,16 +1200,17 @@ var css_248z$4 = ".Sara-module_Sara--default__C-s3N {\n  vertical-align: bottom;
 var styles$4 = {"Sara--default":"Sara-module_Sara--default__C-s3N"};
 styleInject(css_248z$4);
 
-const Sara = (props) => {
-    const { size, state, alt, className } = props, rest = __rest(props, ["size", "state", "alt", "className"]);
-    const SaraClassNames = classNames({
-        [styles$4['Sara--default']]: state === 'default',
-    }, className);
+var Sara = function (props) {
+    var _a;
+    var size = props.size, state = props.state, alt = props.alt, className = props.className, rest = __rest(props, ["size", "state", "alt", "className"]);
+    var SaraClassNames = classNames((_a = {},
+        _a[styles$4['Sara--default']] = state === 'default',
+        _a), className);
     if (state === 'default') {
-        return (React.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara" }, rest),
+        return (React.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara" }, rest),
             React.createElement("img", { src: img$3, alt: alt, width: size, height: size, className: SaraClassNames })));
     }
-    return (React.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara", className: className }, rest),
+    return (React.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara", className: className }, rest),
         React.createElement(Player, { autoplay: true, loop: true, src: AIResting, style: { height: size, width: size } })));
 };
 Sara.defaultProps = {
@@ -1210,23 +1222,24 @@ var css_248z$3 = ".Chip-module_Chip__WQJul {\n  display: flex;\n  justify-conten
 var styles$3 = {"Chip":"Chip-module_Chip__WQJul","Chip-Icon":"Chip-module_Chip-Icon__Gsh-E","Chip-Text":"Chip-module_Chip-Text__iOxrR","Chip--disabled":"Chip-module_Chip--disabled__OMD0B","Chip-Icon--disabled":"Chip-module_Chip-Icon--disabled__fVbeS","Chip-Text--disabled":"Chip-module_Chip-Text--disabled__s3D-N"};
 styleInject(css_248z$3);
 
-const AIChip = (props) => {
-    const { label, icon, disabled, name, className } = props, rest = __rest(props, ["label", "icon", "disabled", "name", "className"]);
-    const ChipClassNames = classNames({
-        [styles$3.Chip]: true,
-        [styles$3['Chip--disabled']]: disabled,
-    }, className);
-    const IconClassNames = classNames({
-        [styles$3['Chip-Icon']]: true,
-        [styles$3['Chip-Icon--disabled']]: disabled,
-        ['material-symbols']: true,
-        ['material-symbols-rounded']: true,
-    });
-    const TextClassNames = classNames({
-        [styles$3['Chip-Text']]: true,
-        [styles$3['Chip-Text--disabled']]: disabled,
-    });
-    return (React.createElement("button", Object.assign({ "data-test": "DesignSystem-AI-Chip", className: ChipClassNames, disabled: disabled }, rest),
+var AIChip = function (props) {
+    var _a, _b, _c;
+    var label = props.label, icon = props.icon, disabled = props.disabled; props.name; var className = props.className, rest = __rest(props, ["label", "icon", "disabled", "name", "className"]);
+    var ChipClassNames = classNames((_a = {},
+        _a[styles$3.Chip] = true,
+        _a[styles$3['Chip--disabled']] = disabled,
+        _a), className);
+    var IconClassNames = classNames((_b = {},
+        _b[styles$3['Chip-Icon']] = true,
+        _b[styles$3['Chip-Icon--disabled']] = disabled,
+        _b['material-symbols'] = true,
+        _b['material-symbols-rounded'] = true,
+        _b));
+    var TextClassNames = classNames((_c = {},
+        _c[styles$3['Chip-Text']] = true,
+        _c[styles$3['Chip-Text--disabled']] = disabled,
+        _c));
+    return (React.createElement("button", __assign$1({ "data-test": "DesignSystem-AI-Chip", className: ChipClassNames, disabled: disabled }, rest),
         React.createElement("i", { "data-test": "DesignSystem-AI-Chip-Icon", className: IconClassNames }, icon),
         React.createElement("span", { "data-test": "DesignSystem-AI-Chip-Text", className: TextClassNames }, label)));
 };
@@ -1239,18 +1252,19 @@ var img$2 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26
 
 var img$1 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='white'/%3e%3c/svg%3e";
 
-const AIButton = (props) => {
-    const { appearance, className, children } = props, rest = __rest(props, ["appearance", "className", "children"]);
-    const buttonClassNames = classNames({
-        [styles$2.Button]: true,
-        [styles$2['Button--primary']]: appearance === 'primary',
-        [styles$2['Button--basic']]: appearance === 'basic',
-    }, className);
-    const IconClassNames = classNames({
-        [styles$2['Button-Icon']]: true,
-    });
-    const buttonIcon = appearance === 'primary' ? img$1 : img$2;
-    return (React.createElement("button", Object.assign({ className: buttonClassNames, "data-test": "DesignSystem-AI-Button" }, rest),
+var AIButton = function (props) {
+    var _a, _b;
+    var appearance = props.appearance, className = props.className, children = props.children, rest = __rest(props, ["appearance", "className", "children"]);
+    var buttonClassNames = classNames((_a = {},
+        _a[styles$2.Button] = true,
+        _a[styles$2['Button--primary']] = appearance === 'primary',
+        _a[styles$2['Button--basic']] = appearance === 'basic',
+        _a), className);
+    var IconClassNames = classNames((_b = {},
+        _b[styles$2['Button-Icon']] = true,
+        _b));
+    var buttonIcon = appearance === 'primary' ? img$1 : img$2;
+    return (React.createElement("button", __assign$1({ className: buttonClassNames, "data-test": "DesignSystem-AI-Button" }, rest),
         React.createElement("img", { src: buttonIcon, alt: "Button Icon", width: 16, height: 16, className: IconClassNames, "data-test": "DesignSystem-AI-Button-Icon" }),
         children));
 };
@@ -4012,21 +4026,22 @@ var css_248z$1 = ".SaraSparkle-module_SaraSparkle--default__5VI39 {\n  vertical-
 var styles$1 = {"SaraSparkle--default":"SaraSparkle-module_SaraSparkle--default__5VI39"};
 styleInject(css_248z$1);
 
-const SaraSparkle = (props) => {
-    const { size, state, alt, className } = props, rest = __rest(props, ["size", "state", "alt", "className"]);
-    const stateMapping = {
+var SaraSparkle = function (props) {
+    var _a;
+    var size = props.size, state = props.state, alt = props.alt, className = props.className, rest = __rest(props, ["size", "state", "alt", "className"]);
+    var stateMapping = {
         listening: Listening,
         'short-processing': AIProcessingShort,
         'long-processing': AIProcessingLong,
     };
-    const SaraClassNames = classNames({
-        [styles$1['SaraSparkle--default']]: state === 'default',
-    }, className);
+    var SaraClassNames = classNames((_a = {},
+        _a[styles$1['SaraSparkle--default']] = state === 'default',
+        _a), className);
     if (state === 'default') {
-        return (React.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara-Sparkle" }, rest),
+        return (React.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara-Sparkle" }, rest),
             React.createElement("img", { src: img, alt: alt, width: size, height: size, className: SaraClassNames })));
     }
-    return (React.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara-Sparkle", className: className }, rest),
+    return (React.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara-Sparkle", className: className }, rest),
         React.createElement(Player, { autoplay: true, loop: true, src: (state && stateMapping[state]) || Listening, style: { height: size, width: size } })));
 };
 SaraSparkle.defaultProps = {
@@ -4038,8 +4053,8 @@ var css_248z = ".IconButton-module_IconButton__vg-g- {\n  background: transparen
 var styles = {"IconButton":"IconButton-module_IconButton__vg-g-","IconButton-Icon":"IconButton-module_IconButton-Icon__uDlZC","IconButton-AI-Icon":"IconButton-module_IconButton-AI-Icon__Sh-PN","IconButton-AI-Icon--top":"IconButton-module_IconButton-AI-Icon--top__Kf5G-","IconButton-AI-Icon--bottom":"IconButton-module_IconButton-AI-Icon--bottom__6nDQF"};
 styleInject(css_248z);
 
-const SaraIconTop = (props) => {
-    const { className } = props;
+var SaraIconTop = function (props) {
+    var className = props.className;
     return (React__default.createElement("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", xmlns: "http://www.w3.org/2000/svg", className: className, "data-test": "DesignSystem-AI-Icon" },
         React__default.createElement("mask", { id: "path-1-outside-1_3121_1765", maskUnits: "userSpaceOnUse", x: "0", y: "0", width: "15", height: "15", fill: "black" },
             React__default.createElement("rect", { fill: "white", width: "15", height: "15" }),
@@ -4052,8 +4067,8 @@ const SaraIconTop = (props) => {
                 React__default.createElement("stop", { offset: "1", stopColor: "#E31C79" })))));
 };
 
-const SaraIconBottom = (props) => {
-    const { className } = props;
+var SaraIconBottom = function (props) {
+    var className = props.className;
     return (React__default.createElement("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", xmlns: "http://www.w3.org/2000/svg", className: className, "data-test": "DesignSystem-AI-Icon" },
         React__default.createElement("mask", { id: "path-1-outside-1_2094_5789", maskUnits: "userSpaceOnUse", x: "1", y: "0", width: "15", height: "15", fill: "black" },
             React__default.createElement("rect", { fill: "white", x: "1", width: "15", height: "15" }),
@@ -4066,32 +4081,33 @@ const SaraIconBottom = (props) => {
                 React__default.createElement("stop", { offset: "1", stopColor: "#E31C79" })))));
 };
 
-const AIIconButton = (props) => {
-    const { icon, position, className, size, color } = props, rest = __rest(props, ["icon", "position", "className", "size", "color"]);
-    const buttonClassNames = classNames({
-        [styles.IconButton]: true,
-    }, className);
-    const IconClassNames = classNames({
-        [styles['IconButton-Icon']]: true,
-        ['material-symbols']: true,
-        ['material-symbols-rounded']: true,
-    });
-    const AIIconClassNames = classNames({
-        [styles['IconButton-AI-Icon']]: true,
-        [styles['IconButton-AI-Icon--top']]: position === 'top',
-        [styles['IconButton-AI-Icon--bottom']]: position === 'bottom',
-    });
-    const sizeMapping = {
+var AIIconButton = function (props) {
+    var _a, _b, _c;
+    var icon = props.icon, position = props.position, className = props.className, size = props.size, color = props.color, rest = __rest(props, ["icon", "position", "className", "size", "color"]);
+    var buttonClassNames = classNames((_a = {},
+        _a[styles.IconButton] = true,
+        _a), className);
+    var IconClassNames = classNames((_b = {},
+        _b[styles['IconButton-Icon']] = true,
+        _b['material-symbols'] = true,
+        _b['material-symbols-rounded'] = true,
+        _b));
+    var AIIconClassNames = classNames((_c = {},
+        _c[styles['IconButton-AI-Icon']] = true,
+        _c[styles['IconButton-AI-Icon--top']] = position === 'top',
+        _c[styles['IconButton-AI-Icon--bottom']] = position === 'bottom',
+        _c));
+    var sizeMapping = {
         regular: 16,
         large: 20,
     };
-    const iconStyles = {
-        fontSize: `${sizeMapping[size]}px`,
-        width: `${sizeMapping[size]}px`,
-        height: `${sizeMapping[size]}px`,
+    var iconStyles = {
+        fontSize: sizeMapping[size] + "px",
+        width: sizeMapping[size] + "px",
+        height: sizeMapping[size] + "px",
         color: 'rgb(0, 0, 0)',
     };
-    return (React.createElement("button", Object.assign({ className: buttonClassNames, "data-test": "DesignSystem-AI-IconButton" }, rest, { style: { color } }),
+    return (React.createElement("button", __assign$1({ className: buttonClassNames, "data-test": "DesignSystem-AI-IconButton" }, rest, { style: { color: color } }),
         React.createElement("i", { "data-test": "DesignSystem-Icon", className: IconClassNames, style: iconStyles }, icon),
         position === 'top' ? (React.createElement(SaraIconTop, { className: AIIconClassNames })) : (React.createElement(SaraIconBottom, { className: AIIconClassNames }))));
 };

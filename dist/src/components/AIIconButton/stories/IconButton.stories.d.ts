@@ -1,21 +1,8 @@
-/// <reference types="react" />
-import type { StoryObj } from '@storybook/react';
-declare const meta: {
-    title: string;
-    component: {
-        (props: import("..").IconButtonProps): import("react").JSX.Element;
-        defaultProps: {
-            size: import("../../../common.type").Size2Hierarchy;
-            position: import("../../../common.type").IconPosition;
-        };
-    };
-    parameters: {
-        layout: string;
-    };
-    tags: string[];
-};
+import type { Meta, StoryObj } from '@storybook/react';
+import { AIIconButton } from '@/index';
+declare const meta: Meta<typeof AIIconButton>;
 export default meta;
-type Story = StoryObj<typeof meta>;
+declare type Story = StoryObj<typeof meta>;
 export declare const Default: Story;
 export declare const Disabled: Story;
 export declare const PositionBottom: Story;

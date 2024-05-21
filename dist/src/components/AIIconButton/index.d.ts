@@ -7,6 +7,7 @@ export interface IconButtonProps extends Omit<BaseHtmlProps<HTMLButtonElement>, 
     type?: ButtonType;
     disabled?: boolean;
     tabIndex?: number;
+    color?: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -18,6 +19,7 @@ export declare const AIIconButton: {
     defaultProps: {
         size: Size2Hierarchy;
         position: IconPosition;
+        color: string;
     };
 };
 export default AIIconButton;
