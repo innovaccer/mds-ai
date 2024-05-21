@@ -40,17 +40,6 @@
     /* global Reflect, Promise, SuppressedError, Symbol */
 
 
-    var __assign$1 = function() {
-        __assign$1 = Object.assign || function __assign(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-        };
-        return __assign$1.apply(this, arguments);
-    };
-
     function __rest(s, e) {
         var t = {};
         for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -1188,7 +1177,7 @@
     	markers: markers$3
     };
 
-    var img$4 = "data:image/svg+xml,%3csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_3314_32121)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.1898 55.9227C13.7816 57.1861 8.66759 55.5682 6.05421 51.0432L2.53533 44.9454C-0.0780511 40.4204 1.0788 35.1799 4.37855 31.9957C1.0788 28.8114 -0.0780511 23.5742 2.53533 19.046L6.05421 12.9482C8.66759 8.42323 13.7816 6.80532 18.1898 8.07193C19.2983 3.62107 23.2555 -0.00149536 28.479 -0.00149536H35.52C40.7468 -0.00149536 44.7039 3.62107 45.8124 8.07193C50.2174 6.80532 55.3314 8.42323 57.9448 12.9482L61.4669 19.046C64.0771 23.5742 62.9202 28.8114 59.6237 31.9957C62.9202 35.1799 64.0771 40.4204 61.4637 44.9454L57.9448 51.0432C55.3314 55.5682 50.2174 57.1861 45.8124 55.9227C44.7039 60.3703 40.7468 63.9929 35.52 63.9929H28.479C23.2555 63.9929 19.2983 60.3703 18.1898 55.9227Z' fill='url(%23paint0_linear_3314_32121)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 32C23.0457 32 32 23.0457 32 12C32 23.0457 40.9543 32 52 32C40.9543 32 32 40.9543 32 52C32 40.9543 23.0457 32 12 32Z' fill='white'/%3e%3c/g%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3314_32121' x1='18.99' y1='0.239091' x2='41.9606' y2='54.7321' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3cclipPath id='clip0_3314_32121'%3e%3crect width='64' height='64' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e";
+    var img$3 = "data:image/svg+xml,%3csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_3314_32121)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.1898 55.9227C13.7816 57.1861 8.66759 55.5682 6.05421 51.0432L2.53533 44.9454C-0.0780511 40.4204 1.0788 35.1799 4.37855 31.9957C1.0788 28.8114 -0.0780511 23.5742 2.53533 19.046L6.05421 12.9482C8.66759 8.42323 13.7816 6.80532 18.1898 8.07193C19.2983 3.62107 23.2555 -0.00149536 28.479 -0.00149536H35.52C40.7468 -0.00149536 44.7039 3.62107 45.8124 8.07193C50.2174 6.80532 55.3314 8.42323 57.9448 12.9482L61.4669 19.046C64.0771 23.5742 62.9202 28.8114 59.6237 31.9957C62.9202 35.1799 64.0771 40.4204 61.4637 44.9454L57.9448 51.0432C55.3314 55.5682 50.2174 57.1861 45.8124 55.9227C44.7039 60.3703 40.7468 63.9929 35.52 63.9929H28.479C23.2555 63.9929 19.2983 60.3703 18.1898 55.9227Z' fill='url(%23paint0_linear_3314_32121)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 32C23.0457 32 32 23.0457 32 12C32 23.0457 40.9543 32 52 32C40.9543 32 32 40.9543 32 52C32 40.9543 23.0457 32 12 32Z' fill='white'/%3e%3c/g%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3314_32121' x1='18.99' y1='0.239091' x2='41.9606' y2='54.7321' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3cclipPath id='clip0_3314_32121'%3e%3crect width='64' height='64' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e";
 
     function styleInject(css, ref) {
       if ( ref === void 0 ) ref = {};
@@ -1221,17 +1210,16 @@
     var styles$4 = {"Sara--default":"Sara-module_Sara--default__C-s3N"};
     styleInject(css_248z$4);
 
-    var Sara = function (props) {
-        var _a;
-        var size = props.size, state = props.state, alt = props.alt, className = props.className, rest = __rest(props, ["size", "state", "alt", "className"]);
-        var SaraClassNames = classNames((_a = {},
-            _a[styles$4['Sara--default']] = state === 'default',
-            _a), className);
+    const Sara = (props) => {
+        const { size, state, alt, className } = props, rest = __rest(props, ["size", "state", "alt", "className"]);
+        const SaraClassNames = classNames({
+            [styles$4['Sara--default']]: state === 'default',
+        }, className);
         if (state === 'default') {
-            return (React__namespace.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara" }, rest),
-                React__namespace.createElement("img", { src: img$4, alt: alt, width: size, height: size, className: SaraClassNames })));
+            return (React__namespace.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara" }, rest),
+                React__namespace.createElement("img", { src: img$3, alt: alt, width: size, height: size, className: SaraClassNames })));
         }
-        return (React__namespace.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara", className: className }, rest),
+        return (React__namespace.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara", className: className }, rest),
             React__namespace.createElement(Player, { autoplay: true, loop: true, src: AIResting, style: { height: size, width: size } })));
     };
     Sara.defaultProps = {
@@ -1243,24 +1231,23 @@
     var styles$3 = {"Chip":"Chip-module_Chip__WQJul","Chip-Icon":"Chip-module_Chip-Icon__Gsh-E","Chip-Text":"Chip-module_Chip-Text__iOxrR","Chip--disabled":"Chip-module_Chip--disabled__OMD0B","Chip-Icon--disabled":"Chip-module_Chip-Icon--disabled__fVbeS","Chip-Text--disabled":"Chip-module_Chip-Text--disabled__s3D-N"};
     styleInject(css_248z$3);
 
-    var AIChip = function (props) {
-        var _a, _b, _c;
-        var label = props.label, icon = props.icon, disabled = props.disabled; props.name; var className = props.className, rest = __rest(props, ["label", "icon", "disabled", "name", "className"]);
-        var ChipClassNames = classNames((_a = {},
-            _a[styles$3.Chip] = true,
-            _a[styles$3['Chip--disabled']] = disabled,
-            _a), className);
-        var IconClassNames = classNames((_b = {},
-            _b[styles$3['Chip-Icon']] = true,
-            _b[styles$3['Chip-Icon--disabled']] = disabled,
-            _b['material-symbols'] = true,
-            _b['material-symbols-rounded'] = true,
-            _b));
-        var TextClassNames = classNames((_c = {},
-            _c[styles$3['Chip-Text']] = true,
-            _c[styles$3['Chip-Text--disabled']] = disabled,
-            _c));
-        return (React__namespace.createElement("button", __assign$1({ "data-test": "DesignSystem-AI-Chip", className: ChipClassNames, disabled: disabled }, rest),
+    const AIChip = (props) => {
+        const { label, icon, disabled, name, className } = props, rest = __rest(props, ["label", "icon", "disabled", "name", "className"]);
+        const ChipClassNames = classNames({
+            [styles$3.Chip]: true,
+            [styles$3['Chip--disabled']]: disabled,
+        }, className);
+        const IconClassNames = classNames({
+            [styles$3['Chip-Icon']]: true,
+            [styles$3['Chip-Icon--disabled']]: disabled,
+            ['material-symbols']: true,
+            ['material-symbols-rounded']: true,
+        });
+        const TextClassNames = classNames({
+            [styles$3['Chip-Text']]: true,
+            [styles$3['Chip-Text--disabled']]: disabled,
+        });
+        return (React__namespace.createElement("button", Object.assign({ "data-test": "DesignSystem-AI-Chip", className: ChipClassNames, disabled: disabled }, rest),
             React__namespace.createElement("i", { "data-test": "DesignSystem-AI-Chip-Icon", className: IconClassNames }, icon),
             React__namespace.createElement("span", { "data-test": "DesignSystem-AI-Chip-Text", className: TextClassNames }, label)));
     };
@@ -1269,23 +1256,22 @@
     var styles$2 = {"Button":"Button-module_Button__brwrY","Button--primary":"Button-module_Button--primary__xF8EF","Button--basic":"Button-module_Button--basic__5o2jW","Button-Icon":"Button-module_Button-Icon__ApVT7"};
     styleInject(css_248z$2);
 
-    var img$3 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%232F2F2F'/%3e%3c/svg%3e";
+    var img$2 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%232F2F2F'/%3e%3c/svg%3e";
 
-    var img$2 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='white'/%3e%3c/svg%3e";
+    var img$1 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='white'/%3e%3c/svg%3e";
 
-    var AIButton = function (props) {
-        var _a, _b;
-        var appearance = props.appearance, className = props.className, children = props.children, rest = __rest(props, ["appearance", "className", "children"]);
-        var buttonClassNames = classNames((_a = {},
-            _a[styles$2.Button] = true,
-            _a[styles$2['Button--primary']] = appearance === 'primary',
-            _a[styles$2['Button--basic']] = appearance === 'basic',
-            _a), className);
-        var IconClassNames = classNames((_b = {},
-            _b[styles$2['Button-Icon']] = true,
-            _b));
-        var buttonIcon = appearance === 'primary' ? img$2 : img$3;
-        return (React__namespace.createElement("button", __assign$1({ className: buttonClassNames, "data-test": "DesignSystem-AI-Button" }, rest),
+    const AIButton = (props) => {
+        const { appearance, className, children } = props, rest = __rest(props, ["appearance", "className", "children"]);
+        const buttonClassNames = classNames({
+            [styles$2.Button]: true,
+            [styles$2['Button--primary']]: appearance === 'primary',
+            [styles$2['Button--basic']]: appearance === 'basic',
+        }, className);
+        const IconClassNames = classNames({
+            [styles$2['Button-Icon']]: true,
+        });
+        const buttonIcon = appearance === 'primary' ? img$1 : img$2;
+        return (React__namespace.createElement("button", Object.assign({ className: buttonClassNames, "data-test": "DesignSystem-AI-Button" }, rest),
             React__namespace.createElement("img", { src: buttonIcon, alt: "Button Icon", width: 16, height: 16, className: IconClassNames, "data-test": "DesignSystem-AI-Button-Icon" }),
             children));
     };
@@ -1293,7 +1279,7 @@
         appearance: 'basic',
     };
 
-    var img$1 = "data:image/svg+xml,%3csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 3C18 11.2843 11.2843 18 3 18C11.2843 18 18 24.7157 18 33C18 24.7157 24.7157 18 33 18C24.7157 18 18 11.2843 18 3ZM33 24C33 28.9706 28.9706 33 24 33C28.9706 33 33 37.0294 33 42C33 37.0294 37.0294 33 42 33C37.0294 33 33 28.9706 33 24Z' fill='url(%23paint0_linear_3166_11159)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3166_11159' x1='16.5' y1='9.75' x2='24.8926' y2='36.3113' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e";
+    var img = "data:image/svg+xml,%3csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 3C18 11.2843 11.2843 18 3 18C11.2843 18 18 24.7157 18 33C18 24.7157 24.7157 18 33 18C24.7157 18 18 11.2843 18 3ZM33 24C33 28.9706 28.9706 33 24 33C28.9706 33 33 37.0294 33 42C33 37.0294 37.0294 33 42 33C37.0294 33 33 28.9706 33 24Z' fill='url(%23paint0_linear_3166_11159)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3166_11159' x1='16.5' y1='9.75' x2='24.8926' y2='36.3113' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e";
 
     var v$2 = "4.8.0";
     var meta$2 = {
@@ -4047,22 +4033,21 @@
     var styles$1 = {"SaraSparkle--default":"SaraSparkle-module_SaraSparkle--default__5VI39"};
     styleInject(css_248z$1);
 
-    var SaraSparkle = function (props) {
-        var _a;
-        var size = props.size, state = props.state, alt = props.alt, className = props.className, rest = __rest(props, ["size", "state", "alt", "className"]);
-        var stateMapping = {
+    const SaraSparkle = (props) => {
+        const { size, state, alt, className } = props, rest = __rest(props, ["size", "state", "alt", "className"]);
+        const stateMapping = {
             listening: Listening,
             'short-processing': AIProcessingShort,
             'long-processing': AIProcessingLong,
         };
-        var SaraClassNames = classNames((_a = {},
-            _a[styles$1['SaraSparkle--default']] = state === 'default',
-            _a), className);
+        const SaraClassNames = classNames({
+            [styles$1['SaraSparkle--default']]: state === 'default',
+        }, className);
         if (state === 'default') {
-            return (React__namespace.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara-Sparkle" }, rest),
-                React__namespace.createElement("img", { src: img$1, alt: alt, width: size, height: size, className: SaraClassNames })));
+            return (React__namespace.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara-Sparkle" }, rest),
+                React__namespace.createElement("img", { src: img, alt: alt, width: size, height: size, className: SaraClassNames })));
         }
-        return (React__namespace.createElement("div", __assign$1({ "data-test": "DesignSystem-AI-Sara-Sparkle", className: className }, rest),
+        return (React__namespace.createElement("div", Object.assign({ "data-test": "DesignSystem-AI-Sara-Sparkle", className: className }, rest),
             React__namespace.createElement(Player, { autoplay: true, loop: true, src: (state && stateMapping[state]) || Listening, style: { height: size, width: size } })));
     };
     SaraSparkle.defaultProps = {
@@ -4070,44 +4055,71 @@
         state: 'default',
     };
 
-    var css_248z = ".IconButton-module_IconButton__vg-g- {\n  background: transparent;\n  padding: var(--spacing);\n  border-radius: var(--spacing-m);\n  cursor: pointer;\n  border: 0;\n  font-family: var(--font-family);\n  font-weight: var(--font-weight-normal);\n  font-size: var(--font-size);\n  line-height: var(--font-height-s);\n  position: relative;\n}\n\n.IconButton-module_IconButton__vg-g-:hover {\n  background: var(--secondary);\n}\n\n.IconButton-module_IconButton__vg-g-:active {\n  background: var(--secondary-dark);\n}\n\n.IconButton-module_IconButton__vg-g-:focus {\n  box-shadow: var(--shadow-spread) var(--secondary-shadow);\n}\n\n.IconButton-module_IconButton__vg-g-:disabled {\n  cursor: not-allowed;\n  pointer-events: none;\n}\n\n.IconButton-module_IconButton-Icon__uDlZC {\n  overflow: hidden;\n  flex-shrink: 0;\n  user-select: none;\n  line-height: inherit;\n  display: flex;\n  align-items: center;\n  position: relative;\n}\n\n.IconButton-module_IconButton-AI-Icon__Sh-PN {\n  position: absolute;\n}\n\n.IconButton-module_IconButton-AI-Icon--top__Kf5G- {\n  bottom: 45%;\n  left: 45%;\n}\n\n.IconButton-module_IconButton-AI-Icon--bottom__6nDQF {\n  top: 50%;\n  left: 50%;\n  transform: rotate(180deg);\n}\n";
+    var css_248z = ".IconButton-module_IconButton__vg-g- {\n  background: transparent;\n  padding: var(--spacing);\n  border-radius: var(--spacing-m);\n  cursor: pointer;\n  border: 0;\n  font-family: var(--font-family);\n  font-weight: var(--font-weight-normal);\n  font-size: var(--font-size);\n  line-height: var(--font-height-s);\n  position: relative;\n}\n\n.IconButton-module_IconButton__vg-g-:hover {\n  background: var(--secondary);\n  color: var(--secondary) !important;\n}\n\n.IconButton-module_IconButton__vg-g-:active {\n  background: var(--secondary-dark);\n  color: var(--secondary-dark) !important;\n}\n\n.IconButton-module_IconButton__vg-g-:focus {\n  box-shadow: var(--shadow-spread) var(--secondary-shadow);\n}\n\n.IconButton-module_IconButton__vg-g-:disabled {\n  cursor: not-allowed;\n  pointer-events: none;\n}\n\n.IconButton-module_IconButton-Icon__uDlZC {\n  overflow: hidden;\n  flex-shrink: 0;\n  user-select: none;\n  line-height: inherit;\n  display: flex;\n  align-items: center;\n  position: relative;\n}\n\n.IconButton-module_IconButton-AI-Icon__Sh-PN {\n  position: absolute;\n}\n\n.IconButton-module_IconButton-AI-Icon--top__Kf5G- {\n  bottom: 45%;\n  left: 45%;\n}\n\n.IconButton-module_IconButton-AI-Icon--bottom__6nDQF {\n  top: 45%;\n  left: 45%;\n}\n";
     var styles = {"IconButton":"IconButton-module_IconButton__vg-g-","IconButton-Icon":"IconButton-module_IconButton-Icon__uDlZC","IconButton-AI-Icon":"IconButton-module_IconButton-AI-Icon__Sh-PN","IconButton-AI-Icon--top":"IconButton-module_IconButton-AI-Icon--top__Kf5G-","IconButton-AI-Icon--bottom":"IconButton-module_IconButton-AI-Icon--bottom__6nDQF"};
     styleInject(css_248z);
 
-    var img = "data:image/svg+xml,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cmask id='path-1-outside-1_3121_1765' maskUnits='userSpaceOnUse' x='0' y='0' width='15' height='15' fill='black'%3e%3crect fill='white' width='15' height='15'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z'/%3e%3c/mask%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z' fill='url(%23paint0_linear_3121_1765)'/%3e%3cpath d='M1 5C0.447715 5 0 5.44772 0 6C0 6.55228 0.447715 7 1 7V5ZM7 1C7 0.447715 6.55228 0 6 0C5.44772 0 5 0.447715 5 1H7ZM5 11C5 11.5523 5.44772 12 6 12C6.55228 12 7 11.5523 7 11H5ZM11 7C11.5523 7 12 6.55228 12 6C12 5.44772 11.5523 5 11 5V7ZM8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12V10ZM12 8C12 7.44772 11.5523 7 11 7C10.4477 7 10 7.44772 10 8H12ZM10 14C10 14.5523 10.4477 15 11 15C11.5523 15 12 14.5523 12 14H10ZM14 12C14.5523 12 15 11.5523 15 11C15 10.4477 14.5523 10 14 10V12ZM1 7C4.31371 7 7 4.31371 7 1H5C5 3.20914 3.20914 5 1 5V7ZM7 11C7 7.68629 4.31371 5 1 5V7C3.20914 7 5 8.79086 5 11H7ZM11 5C7.68629 5 5 7.68629 5 11H7C7 8.79086 8.79086 7 11 7V5ZM5 1C5 4.31371 7.68629 7 11 7V5C8.79086 5 7 3.20914 7 1H5ZM8 12C10.2091 12 12 10.2091 12 8H10C10 9.10457 9.10457 10 8 10V12ZM12 14C12 11.7909 10.2091 10 8 10V12C9.10457 12 10 12.8954 10 14H12ZM14 10C11.7909 10 10 11.7909 10 14H12C12 12.8954 12.8954 12 14 12V10ZM10 8C10 10.2091 11.7909 12 14 12V10C12.8954 10 12 9.10457 12 8H10Z' fill='white' mask='url(%23path-1-outside-1_3121_1765)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3121_1765' x1='5.5' y1='3.25' x2='8.29755' y2='12.1038' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e";
+    const SaraIconTop = (props) => {
+        const { className } = props;
+        return (React.createElement("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", xmlns: "http://www.w3.org/2000/svg", className: className, "data-test": "DesignSystem-AI-Icon" },
+            React.createElement("mask", { id: "path-1-outside-1_3121_1765", maskUnits: "userSpaceOnUse", x: "0", y: "0", width: "15", height: "15", fill: "black" },
+                React.createElement("rect", { fill: "white", width: "15", height: "15" }),
+                React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z" })),
+            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z", fill: "url(#paint0_linear_3121_1765)" }),
+            React.createElement("path", { d: "M1 5C0.447715 5 0 5.44772 0 6C0 6.55228 0.447715 7 1 7V5ZM7 1C7 0.447715 6.55228 0 6 0C5.44772 0 5 0.447715 5 1H7ZM5 11C5 11.5523 5.44772 12 6 12C6.55228 12 7 11.5523 7 11H5ZM11 7C11.5523 7 12 6.55228 12 6C12 5.44772 11.5523 5 11 5V7ZM8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12V10ZM12 8C12 7.44772 11.5523 7 11 7C10.4477 7 10 7.44772 10 8H12ZM10 14C10 14.5523 10.4477 15 11 15C11.5523 15 12 14.5523 12 14H10ZM14 12C14.5523 12 15 11.5523 15 11C15 10.4477 14.5523 10 14 10V12ZM1 7C4.31371 7 7 4.31371 7 1H5C5 3.20914 3.20914 5 1 5V7ZM7 11C7 7.68629 4.31371 5 1 5V7C3.20914 7 5 8.79086 5 11H7ZM11 5C7.68629 5 5 7.68629 5 11H7C7 8.79086 8.79086 7 11 7V5ZM5 1C5 4.31371 7.68629 7 11 7V5C8.79086 5 7 3.20914 7 1H5ZM8 12C10.2091 12 12 10.2091 12 8H10C10 9.10457 9.10457 10 8 10V12ZM12 14C12 11.7909 10.2091 10 8 10V12C9.10457 12 10 12.8954 10 14H12ZM14 10C11.7909 10 10 11.7909 10 14H12C12 12.8954 12.8954 12 14 12V10ZM10 8C10 10.2091 11.7909 12 14 12V10C12.8954 10 12 9.10457 12 8H10Z", fill: "currentColor", mask: "url(#path-1-outside-1_3121_1765)" }),
+            React.createElement("defs", null,
+                React.createElement("linearGradient", { id: "paint0_linear_3121_1765", x1: "5.5", y1: "3.25", x2: "8.29755", y2: "12.1038", gradientUnits: "userSpaceOnUse" },
+                    React.createElement("stop", { stopColor: "#FFC208" }),
+                    React.createElement("stop", { offset: "1", stopColor: "#E31C79" })))));
+    };
 
-    var AIIconButton = function (props) {
-        var _a, _b, _c;
-        var icon = props.icon, position = props.position, className = props.className, size = props.size, rest = __rest(props, ["icon", "position", "className", "size"]);
-        var buttonClassNames = classNames((_a = {},
-            _a[styles.IconButton] = true,
-            _a), className);
-        var IconClassNames = classNames((_b = {},
-            _b[styles['IconButton-Icon']] = true,
-            _b['material-symbols'] = true,
-            _b['material-symbols-rounded'] = true,
-            _b));
-        var AIIconClassNames = classNames((_c = {},
-            _c[styles['IconButton-AI-Icon']] = true,
-            _c[styles['IconButton-AI-Icon--top']] = position === 'top',
-            _c[styles['IconButton-AI-Icon--bottom']] = position === 'bottom',
-            _c));
-        var sizeMapping = {
+    const SaraIconBottom = (props) => {
+        const { className } = props;
+        return (React.createElement("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", xmlns: "http://www.w3.org/2000/svg", className: className, "data-test": "DesignSystem-AI-Icon" },
+            React.createElement("mask", { id: "path-1-outside-1_2094_5789", maskUnits: "userSpaceOnUse", x: "1", y: "0", width: "15", height: "15", fill: "black" },
+                React.createElement("rect", { fill: "white", x: "1", width: "15", height: "15" }),
+                React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z" })),
+            React.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z", fill: "url(#paint0_linear_2094_5789)" }),
+            React.createElement("path", { d: "M11 1C11 0.447715 10.5523 0 10 0C9.44772 0 9 0.447715 9 1L11 1ZM15 7C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5L15 7ZM5 5C4.44771 5 4 5.44772 4 6C4 6.55228 4.44771 7 5 7L5 5ZM9 11C9 11.5523 9.44772 12 10 12C10.5523 12 11 11.5523 11 11L9 11ZM6 8C6 7.44772 5.55229 7 5 7C4.44771 7 4 7.44772 4 8H6ZM8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10V12ZM2 10C1.44771 10 1 10.4477 1 11C1 11.5523 1.44771 12 2 12V10ZM4 14C4 14.5523 4.44771 15 5 15C5.55229 15 6 14.5523 6 14H4ZM9 1C9 4.31371 11.6863 7 15 7L15 5C12.7909 5 11 3.20914 11 1L9 1ZM5 7C8.31371 7 11 4.31371 11 1L9 1C9 3.20914 7.20914 5 5 5L5 7ZM11 11C11 7.68629 8.31371 5 5 5L5 7C7.20914 7 9 8.79086 9 11L11 11ZM15 5C11.6863 5 9 7.68629 9 11L11 11C11 8.79086 12.7909 7 15 7L15 5ZM4 8C4 10.2091 5.79086 12 8 12V10C6.89543 10 6 9.10457 6 8H4ZM2 12C4.20914 12 6 10.2091 6 8H4C4 9.10457 3.10457 10 2 10V12ZM6 14C6 11.7909 4.20914 10 2 10V12C3.10457 12 4 12.8954 4 14H6ZM8 10C5.79086 10 4 11.7909 4 14H6C6 12.8954 6.89543 12 8 12V10Z", fill: "currentColor", mask: "url(#path-1-outside-1_2094_5789)" }),
+            React.createElement("defs", null,
+                React.createElement("linearGradient", { id: "paint0_linear_2094_5789", x1: "12.75", y1: "5.5", x2: "3.89622", y2: "8.29755", gradientUnits: "userSpaceOnUse" },
+                    React.createElement("stop", { stopColor: "#FFC208" }),
+                    React.createElement("stop", { offset: "1", stopColor: "#E31C79" })))));
+    };
+
+    const AIIconButton = (props) => {
+        const { icon, position, className, size, color } = props, rest = __rest(props, ["icon", "position", "className", "size", "color"]);
+        const buttonClassNames = classNames({
+            [styles.IconButton]: true,
+        }, className);
+        const IconClassNames = classNames({
+            [styles['IconButton-Icon']]: true,
+            ['material-symbols']: true,
+            ['material-symbols-rounded']: true,
+        });
+        const AIIconClassNames = classNames({
+            [styles['IconButton-AI-Icon']]: true,
+            [styles['IconButton-AI-Icon--top']]: position === 'top',
+            [styles['IconButton-AI-Icon--bottom']]: position === 'bottom',
+        });
+        const sizeMapping = {
             regular: 16,
             large: 20,
         };
-        var iconStyles = {
-            fontSize: "".concat(sizeMapping[size], "px"),
-            width: "".concat(sizeMapping[size], "px"),
-            height: "".concat(sizeMapping[size], "px"),
+        const iconStyles = {
+            fontSize: `${sizeMapping[size]}px`,
+            width: `${sizeMapping[size]}px`,
+            height: `${sizeMapping[size]}px`,
+            color: 'rgb(0, 0, 0)',
         };
-        return (React__namespace.createElement("button", __assign$1({ className: buttonClassNames, "data-test": "DesignSystem-AI-IconButton" }, rest),
+        return (React__namespace.createElement("button", Object.assign({ className: buttonClassNames, "data-test": "DesignSystem-AI-IconButton" }, rest, { style: { color } }),
             React__namespace.createElement("i", { "data-test": "DesignSystem-Icon", className: IconClassNames, style: iconStyles }, icon),
-            React__namespace.createElement("img", { src: img, alt: "Icon", width: 16, height: 16, "data-test": "DesignSystem-AI-Icon", className: AIIconClassNames })));
+            position === 'top' ? (React__namespace.createElement(SaraIconTop, { className: AIIconClassNames })) : (React__namespace.createElement(SaraIconBottom, { className: AIIconClassNames }))));
     };
     AIIconButton.defaultProps = {
         size: 'regular',
         position: 'top',
+        color: '#fff',
     };
 
     exports.AIButton = AIButton;

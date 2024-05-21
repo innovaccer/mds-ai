@@ -3,9 +3,9 @@
     "declaration": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
+    "target": "ES6",
     "jsx": "react",
-    "module": "ES2022",
+    "module": "ES6",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -18,10 +18,12 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "lib": ["es6", "es7", "es2017", "dom"],
+    "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     }
   },
+  "include": ["src"],
   "exclude": ["dist", "build", "node_modules", ".github", "figma", "jest.config.ts"]
 }

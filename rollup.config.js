@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import image from '@rollup/plugin-image';
@@ -39,7 +39,9 @@ const config = {
   ],
   plugins: [
     nodeResolve(), // Resolves node_modules
-    typescript(), // Transpile TypeScript
+    typescript({
+      tsconfig: 'tsconfig.json',
+    }), // Transpile TypeScript
     postcss(), // Process CSS files
     image(), // Handle non-JavaScript files (e.g., images)
     json(),
