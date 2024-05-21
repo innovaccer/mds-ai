@@ -1,5 +1,5 @@
 import React from 'react';
-declare type SaraIconType = {
+type SaraIconType = {
     className?: string;
 };
 declare const SaraIconTop: (props: SaraIconType) => React.JSX.Element;

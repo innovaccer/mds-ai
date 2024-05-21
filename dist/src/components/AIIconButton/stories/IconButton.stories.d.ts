@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AIIconButton } from '@/index';
 declare const meta: Meta<typeof AIIconButton>;
 export default meta;
-declare type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 export declare const Default: Story;
 export declare const Disabled: Story;
 export declare const PositionBottom: Story;

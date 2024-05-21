@@ -4102,9 +4102,9 @@ var AIIconButton = function (props) {
         large: 20,
     };
     var iconStyles = {
-        fontSize: sizeMapping[size] + "px",
-        width: sizeMapping[size] + "px",
-        height: sizeMapping[size] + "px",
+        fontSize: "".concat(sizeMapping[size], "px"),
+        width: "".concat(sizeMapping[size], "px"),
+        height: "".concat(sizeMapping[size], "px"),
         color: 'rgb(0, 0, 0)',
     };
     return (React.createElement("button", __assign$1({ className: buttonClassNames, "data-test": "DesignSystem-AI-IconButton" }, rest, { style: { color: color } }),

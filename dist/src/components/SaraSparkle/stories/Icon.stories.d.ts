@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SaraSparkle } from '@/index';
 declare const meta: Meta<typeof SaraSparkle>;
 export default meta;
-declare type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 export declare const Default: Story;
 export declare const Tiny: Story;
 export declare const Medium: Story;
