@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import '@innovaccer/design-system/css';
+import { DocPage } from './docPage';
 
 const preview: Preview = {
   parameters: {
@@ -15,6 +16,7 @@ const preview: Preview = {
       canvas: {
         sourceState: 'shown',
       },
+      page: DocPage
     },
   },
 };
