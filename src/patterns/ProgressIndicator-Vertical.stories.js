@@ -1,7 +1,7 @@
 import React from 'react';
 import { SaraSparkle } from '@/index';
 import { Text } from '@innovaccer/design-system';
-import styles from './Patterns.module.css';
+import './Patterns.css';
 
 export default {
   title: 'Patterns/Progress Indicator/Vertical',
@@ -35,7 +35,7 @@ export const Vertical = () => {
   return (
     <div className="d-flex align-items-center justify-content-center flex-column">
       <SaraSparkle size={48} state="listening" className="mb-3" />
-      <Text className={styles['shimmer-text1']} size="large">
+      <Text className={'shimmer-text1'} size="large">
         Sara is listening
       </Text>
     </div>
@@ -46,7 +46,7 @@ export const Test2 = () => {
   return (
     <div className="d-flex align-items-center justify-content-center flex-column">
       <SaraSparkle size={48} state="listening" className="mb-3" />
-      <Text className={styles['shimmer-text2']} size="large">
+      <Text className={'shimmer-text2'} size="large">
         Sara is listening
       </Text>
     </div>
@@ -57,7 +57,7 @@ export const Test3 = () => {
   return (
     <div className="d-flex align-items-center justify-content-center flex-column">
       <SaraSparkle size={48} state="listening" className="mb-3" />
-      <Text className={styles['shimmer-text3']} size="large">
+      <Text className={'shimmer-text3'} size="large">
         Sara is listening
       </Text>
     </div>
@@ -68,7 +68,7 @@ export const Test4 = () => {
   return (
     <div className="d-flex align-items-center justify-content-center flex-column">
       <SaraSparkle size={48} state="listening" className="mb-3" />
-      <Text className={styles['shimmer-text4']} size="large">
+      <Text className={'shimmer-text4'} size="large">
         Sara is listening
       </Text>
     </div>
@@ -79,10 +79,10 @@ export const Test5 = () => {
   return (
     <div className="d-flex align-items-center justify-content-center flex-column">
       <SaraSparkle size={48} state="listening" className="mb-3" />
-      <Text className={styles['shimmer-text5']} size="large">
+      <Text className={'shimmer-text5'} size="large">
         Sara is listening
       </Text>
-      <div className={styles['shimmer-child']}></div>
+      <div className={'shimmer-child'}></div>
     </div>
   );
 };
@@ -91,7 +91,7 @@ export const Test6 = () => {
   return (
     <div className="d-flex align-items-center justify-content-center flex-column">
       <SaraSparkle size={48} state="listening" className="mb-3" />
-      <Text className={styles['shimmer-text6']} size="large">
+      <Text className={'shimmer-text6'} size="large">
         Sara is listening
       </Text>
     </div>

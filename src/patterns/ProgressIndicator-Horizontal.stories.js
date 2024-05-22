@@ -1,7 +1,7 @@
 import React from 'react';
 import { SaraSparkle } from '@/index';
 import { Text } from '@innovaccer/design-system';
-import styles from './Patterns.module.css';
+import './Patterns.css';
 
 export default {
   title: 'Patterns/Progress Indicator/Horizontal',
@@ -35,7 +35,7 @@ export const Horizontal = () => {
   return (
     <div className="d-flex align-items-center justify-content-center">
       <SaraSparkle size={24} state="listening" className="mr-3" />
-      <Text className={styles['shimmer-text']}>Sara is listening</Text>
+      <Text className={'shimmer-text'}>Sara is listening</Text>
     </div>
   );
 };
