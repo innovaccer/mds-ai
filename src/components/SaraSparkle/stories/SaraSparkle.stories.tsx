@@ -50,7 +50,7 @@ export const CustomSize: Story = {
 
 export const States = () => {
   return (
-    <div className="d-flex vw-75">
+    <div className="d-flex vw-50">
       <div className="d-flex flex-column align-items-center text-align-center w-100">
         <SaraSparkle />
         <Text appearance="subtle" className="mt-6">
