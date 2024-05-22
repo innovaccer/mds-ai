@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { AIButton } from '@/index';
 
@@ -35,4 +36,15 @@ export const Disabled: Story = {
     appearance: 'primary',
     disabled: true,
   },
+};
+
+export const Appearance = () => {
+  return (
+    <div className="d-flex">
+      <AIButton appearance="primary" className="mr-10">
+        Primary Button
+      </AIButton>
+      <AIButton>Basic Button</AIButton>
+    </div>
+  );
 };
