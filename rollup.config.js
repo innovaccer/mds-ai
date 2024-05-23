@@ -5,6 +5,8 @@ import image from '@rollup/plugin-image';
 import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import path from 'path';
+import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
 
 function globals() {
   return {
@@ -39,9 +41,11 @@ const config = {
   ],
   plugins: [
     nodeResolve(), // Resolves node_modules
+    commonjs(),
     typescript({
       tsconfig: 'tsconfig.json',
     }), // Transpile TypeScript
+    babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }), // Babel plugin configuration
     postcss(), // Process CSS files
     image(), // Handle non-JavaScript files (e.g., images)
     json(),

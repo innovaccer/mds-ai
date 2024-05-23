@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SaraSparkle } from '@/index';
 declare const meta: Meta<typeof SaraSparkle>;
@@ -8,3 +9,4 @@ export declare const Tiny: Story;
 export declare const Medium: Story;
 export declare const Large: Story;
 export declare const CustomSize: Story;
+export declare const States: () => React.JSX.Element;
