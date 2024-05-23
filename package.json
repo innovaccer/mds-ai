@@ -96,5 +96,10 @@
     "src/components/**/*.css": [
       "npm run prettier:check"
     ]
-  }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
 }

@@ -12,7 +12,7 @@ describe('<AIIconButton />', () => {
     const { getByTestId } = render(<AIIconButton />);
     expect(getByTestId('DesignSystem-AI-Icon')).toHaveAttribute('width', '16');
     expect(getByTestId('DesignSystem-AI-Icon')).toHaveAttribute('height', '16');
-    expect(getByTestId('DesignSystem-AI-Icon')).toHaveClass('IconButton-AI-Icon--top');
+    expect(getByTestId('DesignSystem-AI-Icon')).toHaveClass('IconButton-AI-Regular-Icon--top');
   });
 
   test('triggers onClick event handler when clicked', () => {
