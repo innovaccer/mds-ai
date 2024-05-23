@@ -44,9 +44,14 @@
   position: absolute;
 }
 
-.IconButton-AI-Icon--top {
+.IconButton-AI-Regular-Icon--top {
   bottom: 40%;
   left: 40%;
+}
+
+.IconButton-AI-Large-Icon--top {
+  bottom: 45%;
+  left: 45%;
 }
 
 .IconButton-AI-Icon--bottom {

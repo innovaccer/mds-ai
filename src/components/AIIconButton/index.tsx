@@ -74,7 +74,8 @@ export const AIIconButton = (props: IconButtonProps) => {
 
   const AIIconClassNames = classNames({
     [styles['IconButton-AI-Icon']]: true,
-    [styles['IconButton-AI-Icon--top']]: position === 'top',
+    [styles['IconButton-AI-Large-Icon--top']]: position === 'top' && size === 'large',
+    [styles['IconButton-AI-Regular-Icon--top']]: position === 'top' && size === 'regular',
     [styles['IconButton-AI-Icon--bottom']]: position === 'bottom',
   });
 
