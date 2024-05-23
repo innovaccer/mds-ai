@@ -13,23 +13,33 @@ export const Horizontal = () => {
    *
    * import { Text } from '@innovaccer/design-system';
    *
-   * // Patterns.module.css
+   * // Patterns.css
    * @keyframes shimmer {
    *  0% {
-   *    background-position: 100% 0;
+   *    background-position: -4rem top;
+   *  }
+   *  50% {
+   *    background-position: 12.5rem top;
    *  }
    *  100% {
-   *    background-position: 200% 0;
+   *    background-position: 12.5rem top;
    *  }
-   *
+   *  
    * .shimmer-text {
-   *   background: linear-gradient(to right, #595959, #c5c5c5, #c5c5c5, #595959);
-   *   background-size: 200% 100%;
-   *   animation: shimmer 720ms infinite cubic-bezier(0.4, 0.14, 0.3, 1);
-   *   color: transparent;
-   *   background-clip: text;
-   * }
-   *
+   *    display: inline-block;
+   *    color: white;
+   *    background: #595959 -webkit-gradient(linear, 100% 0, 0 0, from(#595959), color-stop(0.5, #c5c5c5), to(#595959));
+   *    background-position: -4rem top;
+   *    background-repeat: no-repeat;
+   *    animation-fill-mode: forwards;
+   *    background-clip: text;
+   *    -webkit-text-fill-color: transparent;
+   *    animation-name: shimmer;
+   *    animation-duration: 3s;
+   *    animation-iteration-count: infinite;
+   *    background-size: 4rem 100%;
+   *  }
+   * 
    */
 
   return (
