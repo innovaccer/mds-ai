@@ -24,7 +24,7 @@ export const Horizontal = () => {
    *  100% {
    *    background-position: 12.5rem top;
    *  }
-   *  
+   *
    * .shimmer-text {
    *    display: inline-block;
    *    color: white;
@@ -39,7 +39,7 @@ export const Horizontal = () => {
    *    animation-iteration-count: infinite;
    *    background-size: 4rem 100%;
    *  }
-   * 
+   *
    */
 
   return (

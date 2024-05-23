@@ -1,6 +1,6 @@
 {
   "name": "mds-ai",
-  "version": "1.0.0",
+  "version": "1.0.0-1",
   "description": "AI components library project for Innovaccer Design System",
   "homepage": "https://innovaccer.github.io/mds-ai",
   "main": "dist/bundle.umd.js",
@@ -23,7 +23,8 @@
     "lint": "npm run lint:check -- --fix",
     "prettier": "prettier --config ./.prettierrc --write 'src/components/**/*.css'"
   },
-  "keywords": [],
+  "keywords": ["AI Design System", "Innovaccer", "React", "Typescript"],
+  "repository": "github:innovaccer/mds-ai",
   "author": "Innovaccer",
   "license": "MIT",
   "type": "module",
